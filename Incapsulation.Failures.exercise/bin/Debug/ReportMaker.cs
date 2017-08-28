@@ -6,28 +6,12 @@ using System.Threading.Tasks;
 
 namespace Incapsulation.Failures
 {
-
-    public class Common
+    enum FailureType
     {
-        public static int IsFailureSerious(int failureType)
-        {
-            if (failureType%2==0) return 1;
-            return 0;
-        }
-
-
-        public static int Earlier(object[] v, int day, int month, int year)
-        {
-            int vYear = (int)v[2];
-            int vMonth = (int)v[1];
-            int vDay = (int)v[0];
-            if (vYear < year) return 1;
-            if (vYear > year) return 0;
-            if (vMonth < month) return 1;
-            if (vMonth > month) return 0;
-            if (vDay < day) return 1;
-            return 0;
-        }
+        UnexpectedShutdown = 0,
+        NonResponding = 1,
+        HardwareFailures = 2,
+        ConnectionProblems = 3
     }
 
     public class ReportMaker
@@ -47,47 +31,23 @@ namespace Incapsulation.Failures
         /// <returns></returns>
         /// 
 
-        private static int[] failureTypes;
-        private static int[] deviceId;
-        private static List<object> name;
-
-        public static int[] FailureTypes
+        public static List<string> FindDevicesFailedBeforeDate(FailureTypes failure, Device device, DateTime date)
         {
-            get { return failureTypes; }
-            set { failureTypes = value; }
-        }
-
-        public static int[] Device
-        {
-            get { return deviceId; }
-            set { deviceId = value; }
-        }
-
-        public static List<object> Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public static List<string> FindDevicesFailedBeforeDate(
-           int day,
-           int month,
-           int year,
-           object[][] times)
-        {
-
             var problematicDevices = new HashSet<int>();
-            for (int i = 0; i < FailureTypes.Length; i++)
-                if (Common.IsFailureSerious(failureTypes[i]) == 1 && Common.Earlier(times[i], day, month, year) == 1)
+            //var failureType = new IEnumerable<int>(device.Id.AsEnumerable);
+            
+            for (int i = 0; i < failure.Types.Length; i++)
+                if (FailureTypes.IsFailureSerious(failure.Types[i]) == 1 && 
+                    DateTime.Earlier(date.Times[i], date.Day, date.Month, date.Year) == 1)
                 {
-                    problematicDevices.Add(deviceId[i]);
+                    problematicDevices.Add(device.Id[i]);
                 }
 
             var result = new List<string>();
 
-            foreach (var device in Device)
-                if (problematicDevices.Contains(device))
-                    result.Add(Name[device] as string);
+            foreach (var oneDevice in device.Id)
+                if (problematicDevices.Contains(oneDevice))
+                    result.Add(device.Name[oneDevice] as string);
 
             return result;
         }
@@ -102,22 +62,118 @@ namespace Incapsulation.Failures
             object[][] times,
             List<Dictionary<string, object>> devices)
         {
-            FailureTypes = failureTypes;
-            Device = deviceId;
+            var failure = new FailureTypes(failureTypes);
+            var device = new Device(deviceId);
+            var date = new DateTime(day, month, year, times);
 
-            Name = new List<object> { };
-            foreach (var device in devices)
+            foreach (var oneDevice in devices)
             {
-                Name.Add(device["Name"]);
+                device.Name.Add(oneDevice["Name"]);
             }
 
-            var result = FindDevicesFailedBeforeDate(
-                day,
-                month,
-                year,
-                times
-                );
+            var result = FindDevicesFailedBeforeDate(failure, device, date);
             return result;
+        }
+    }
+
+    public class Device
+    {
+        private int[] devices;
+        private List<object> name;
+
+        public int[] Id
+        {
+            get { return devices; }
+            set { devices = value; }
+        }
+
+        public List<object> Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+       public Device(int[] deviceId)
+        {
+            Id = deviceId;
+            Name = new List<object> { };
+        }
+    }
+
+    public class FailureTypes
+    {
+        private int[] failureTypes;
+
+        public int[] Types
+        {
+            get { return failureTypes; }
+            set { failureTypes = value; }
+        }
+
+        public FailureTypes(int[] types)
+        {
+            Types = types;
+        }
+
+        public static int IsFailureSerious(int failureType)
+        {
+            //if (failureType % 2 == 0) return 1;
+            if (failureType == (int)FailureType.UnexpectedShutdown ||
+                failureType == (int)FailureType.HardwareFailures) return 1;
+            return 0;
+        }
+    }
+
+    public class DateTime
+    {
+        private int day;
+        private int month;
+        private int year;
+        private object[][] times;
+
+        public int Day
+        {
+            get { return day; }
+            set { day = value; }
+        }
+
+        public int Month
+        {
+            get { return month; }
+            set { month = value; }
+        }
+
+        public int Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+
+        public object[][] Times
+        {
+            get { return times; }
+            set { times = value; }
+        }
+
+        public DateTime(int day, int month, int year, object[][] times)
+        {
+            Day = day;
+            Month = month;
+            Year = year;
+            Times = times;
+        }
+
+        public static int Earlier(object[] v, int day, int month, int year)
+        {
+            int vYear = (int)v[2];
+            int vMonth = (int)v[1];
+            int vDay = (int)v[0];
+            if (vYear < year) return 1;
+            if (vYear > year) return 0;
+            if (vMonth < month) return 1;
+            if (vMonth > month) return 0;
+            if (vDay < day) return 1;
+            return 0;
         }
     }
 }

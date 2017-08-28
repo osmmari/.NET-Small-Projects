@@ -1,0 +1,10 @@
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\ReportMaker.cs
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\Incapsulation.Failures.exe.config
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\Incapsulation.Failures.exe
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\Incapsulation.Failures.pdb
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\obj\Debug\Incapsulation.Failures.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\obj\Debug\Incapsulation.Failures.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\obj\Debug\Incapsulation.Failures.exe
+D:\Programs\git\Csharp\Incapsulation.Failures.exercise\obj\Debug\Incapsulation.Failures.pdb

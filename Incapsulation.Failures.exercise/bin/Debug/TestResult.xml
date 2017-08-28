@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="Incapsulation.Failures.exe" fullname="D:/Programs/git/Csharp/Incapsulation.Failures.exercise/bin/Debug/Incapsulation.Failures.exe" testcasecount="2" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:27:33Z" duration="100.709740" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="2" random-seed="1427017830">
+  <command-line><![CDATA["D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug\Incapsulation.Failures.exe" ]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1003" name="Incapsulation.Failures.exe" fullname="D:/Programs/git/Csharp/Incapsulation.Failures.exercise/bin/Debug/Incapsulation.Failures.exe" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:27:33Z" duration="100.709740" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug" machine-name="AESEE-PC" user="aesee" user-domain="aesee-PC" culture="ru-RU" uiculture="ru-RU" os-architecture="x86" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Programs\git\Csharp\Incapsulation.Failures.exercise\bin\Debug" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="7656" />
+      <property name="_APPDOMAIN" value="Incapsulation.Failures.exe" />
+    </properties>
+    <test-suite type="TestSuite" id="1004" name="Incapsulation" fullname="Incapsulation" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:27:33Z" duration="100.702821" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+      <test-suite type="TestSuite" id="1005" name="Failures" fullname="Incapsulation.Failures" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:27:33Z" duration="100.700861" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+        <test-suite type="TestFixture" id="1000" name="ReportMaker_should" fullname="Incapsulation.Failures.ReportMaker_should" classname="Incapsulation.Failures.ReportMaker_should" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:27:33Z" duration="100.697392" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+          <test-case id="1001" name="WorkCorrectly1" fullname="Incapsulation.Failures.ReportMaker_should.WorkCorrectly1" methodname="WorkCorrectly1" classname="Incapsulation.Failures.ReportMaker_should" runstate="Runnable" seed="1384772901" result="Passed" start-time="2017-08-28 13:25:53Z" end-time="2017-08-28 13:25:59Z" duration="5.865027" asserts="1" />
+          <test-case id="1002" name="WorkCorrectly2" fullname="Incapsulation.Failures.ReportMaker_should.WorkCorrectly2" methodname="WorkCorrectly2" classname="Incapsulation.Failures.ReportMaker_should" runstate="Runnable" seed="450075150" result="Passed" start-time="2017-08-28 13:25:59Z" end-time="2017-08-28 13:27:33Z" duration="94.817607" asserts="1" />
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

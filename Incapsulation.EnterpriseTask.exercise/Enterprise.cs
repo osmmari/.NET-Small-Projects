@@ -8,54 +8,38 @@ namespace Incapsulation.EnterpriseTask
 {
     public class Enterprise
     {
-        Guid guid;
+        public readonly Guid Guid;
+        private string inn;
+        public DateTime establishDate;
 
-        public Guid getGuid() { return guid; }
+        public string Name{ get; set; }
 
-        public Enterprise(Guid guid)
+        public string Inn
         {
-            this.guid = guid;
+            get { return inn; }
+            set
+            {
+                if (inn.Length != 10 || !inn.All(z => char.IsDigit(z)))
+                    throw new ArgumentException();
+                inn = value;
+            }
         }
 
-        string name;
+        public DateTime EstablishDate { get; set; }
 
-        public string getName() { return name; }
-
-        public void setName(string name) { this.name = name; }
-
-        string inn;
-
-        public string getINN() { return inn; }
-
-        public void setINN(string inn)
-        {
-            if (inn.Length != 10 || !inn.All(z => char.IsDigit(z)))
-                throw new ArgumentException();
-            this.inn = inn;
+        public TimeSpan ActiveTimeSpan {
+            get { if (establishDate > DateTime.Now)
+                    return DateTime.Now - establishDate;
+                else
+                    throw new ArgumentException();
+            }
         }
 
-        DateTime establishDate;
-
-        public DateTime getEstablishDate()
-        {
-            return establishDate;
-        }
-
-        public void setEstablishDate(DateTime establishDate)
-        {
-            this.establishDate = establishDate;
-        }
-
-        public TimeSpan getActiveTimeSpan()
-        {
-            return DateTime.Now - establishDate;
-        }
-
-        public double getTotalTransactionsAmount()
+        public double GetTotalTransactionsAmount()
         {
             DataBase.OpenConnection();
             var amount = 0.0;
-            foreach (Transaction t in DataBase.Transactions().Where(z => z.EnterpriseGuid == guid))
+            foreach (Transaction t in DataBase.Transactions().Where(z => z.EnterpriseGuid == Guid))
                 amount += t.Amount;
             return amount;
         }

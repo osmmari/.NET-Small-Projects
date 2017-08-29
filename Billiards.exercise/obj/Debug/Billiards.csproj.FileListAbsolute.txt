@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\Billiards.exercise\bin\Debug\Billiards.exe.config
+D:\Programs\git\Csharp\Billiards.exercise\bin\Debug\Billiards.exe
+D:\Programs\git\Csharp\Billiards.exercise\bin\Debug\Billiards.pdb
+D:\Programs\git\Csharp\Billiards.exercise\bin\Debug\TestingRoom.dll
+D:\Programs\git\Csharp\Billiards.exercise\obj\Debug\Billiards.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Billiards.exercise\obj\Debug\Billiards.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Billiards.exercise\obj\Debug\Billiards.exe
+D:\Programs\git\Csharp\Billiards.exercise\obj\Debug\Billiards.pdb

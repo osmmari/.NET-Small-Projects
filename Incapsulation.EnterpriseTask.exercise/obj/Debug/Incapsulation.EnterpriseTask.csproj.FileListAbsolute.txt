@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\bin\Debug\Incapsulation.Enterprise.dll.config
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\bin\Debug\Incapsulation.Enterprise.dll
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\bin\Debug\Incapsulation.Enterprise.pdb
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\obj\Debug\Incapsulation.EnterpriseTask.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\obj\Debug\Incapsulation.EnterpriseTask.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\obj\Debug\Incapsulation.Enterprise.dll
+D:\Programs\git\Csharp\Incapsulation.EnterpriseTask.exercise\obj\Debug\Incapsulation.Enterprise.pdb

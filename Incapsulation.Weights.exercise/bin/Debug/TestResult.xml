@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="Incapsulation.Weights.exe" fullname="D:/Programs/git/Csharp/Incapsulation.Weights.exercise/bin/Debug/Incapsulation.Weights.exe" testcasecount="1" result="Failed" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.748558" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" random-seed="1706634965">
+  <command-line><![CDATA["D:\Programs\git\Csharp\Incapsulation.Weights.exercise\bin\Debug\Incapsulation.Weights.exe" ]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1002" name="Incapsulation.Weights.exe" fullname="D:/Programs/git/Csharp/Incapsulation.Weights.exercise/bin/Debug/Incapsulation.Weights.exe" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.748558" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Programs\git\Csharp\Incapsulation.Weights.exercise\bin\Debug" machine-name="AESEE-PC" user="aesee" user-domain="aesee-PC" culture="ru-RU" uiculture="ru-RU" os-architecture="x86" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Programs\git\Csharp\Incapsulation.Weights.exercise\bin\Debug" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="5688" />
+      <property name="_APPDOMAIN" value="Incapsulation.Weights.exe" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1003" name="Incapsulation" fullname="Incapsulation" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.739820" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1004" name="Weights" fullname="Incapsulation.Weights" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.737891" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1000" name="Indexer_should" fullname="Incapsulation.Weights.Indexer_should" classname="Incapsulation.Weights.Indexer_should" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.735115" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1001" name="GetCorrectly" fullname="Incapsulation.Weights.Indexer_should.GetCorrectly" methodname="GetCorrectly" classname="Incapsulation.Weights.Indexer_should" runstate="Runnable" seed="1947733030" result="Failed" label="Error" start-time="2017-08-29 11:25:36Z" end-time="2017-08-29 11:25:44Z" duration="7.726576" asserts="0">
+            <failure>
+              <message><![CDATA[System.ArgumentException : Значение не попадает в ожидаемый диапазон.]]></message>
+              <stack-trace><![CDATA[   в Incapsulation.Weights.Indexer.set_Length(Int32 value) в D:\Programs\git\Csharp\Incapsulation.Weights.exercise\Indexer.cs:строка 23
+   в Incapsulation.Weights.Indexer..ctor(Double[] array, Int32 mod, Int32 length) в D:\Programs\git\Csharp\Incapsulation.Weights.exercise\Indexer.cs:строка 42
+   в Incapsulation.Weights.Indexer_should.GetCorrectly() в D:\Programs\git\Csharp\Incapsulation.Weights.exercise\Indexer_should.cs:строка 25]]></stack-trace>
+            </failure>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -20,14 +20,16 @@ namespace Rectangles
 
 		private static IEnumerable<TestCase> CreateTestCases()
 		{
-			/*yield return new RectanglesTestRoomTestCase(new Rectangle(-90, -20, 180, 40), new Rectangle(-20, -90, 40, 180), true, 1600, -1);
+			yield return new RectanglesTestRoomTestCase(new Rectangle(-90, -20, 180, 40), new Rectangle(-20, -90, 40, 180), true, 1600, -1);
 			yield return new RectanglesTestRoomTestCase(new Rectangle(-90, -20, 180, 40), new Rectangle(-20, 0, 40, 90), true, 800, -1);
 			yield return new RectanglesTestRoomTestCase(new Rectangle(-90, -90, 100, 100), new Rectangle(-10, -10, 100, 100), true, 400, -1);
 			yield return new RectanglesTestRoomTestCase(new Rectangle(-50, -50, 50, 50), new Rectangle(0, 0, 50, 50), true, 0, -1);
 			yield return new RectanglesTestRoomTestCase(new Rectangle(-50, 0, 50, 50), new Rectangle(0, 0, 50, 50), true, 0, -1);
-			yield return new RectanglesTestRoomTestCase(new Rectangle(-50, 0, 60, 60), new Rectangle(0, 0, 50, 50), true, 500, -1);*/
-            yield return new RectanglesTestRoomTestCase(new Rectangle(20, 2, 40, 4), new Rectangle(10,2,20,1), true, 10, -1);
-            // r1 = Left: 20, Top: 2, Width: 40, Height: 4, r2 = Left: 10, Top: 2, Width: 20, Height: 1 Expected: Intersected = True S = 10 InnerIndex = -1
+			yield return new RectanglesTestRoomTestCase(new Rectangle(-50, 0, 60, 60), new Rectangle(0, 0, 50, 50), true, 500, -1);
+            //yield return new RectanglesTestRoomTestCase(new Rectangle(20, 2, 40, 4), new Rectangle(10,3,50,1), true, 40, -1);
+            // r1 = Left: 20, Top: 2, Width: 40, Height: 4, r2 = Left: 10, Top: 3, Width: 50, Height: 1 Expected: Intersected = True S = 40 InnerIndex = -1
+            // r1 = Left: 20, Top: 2, Width: 40, Height: 4, r2 = Left: 10, Top: 3, Width: 20, Height: 1 Expected: Intersected = True S = 10 InnerIndex = -1
+
             for (int x = -1; x <= 1; x++)
 				for (int y = -1; y <= 1; y++)
 					if (10 * x + y != 0)

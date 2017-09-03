@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\Distance.exercise\bin\Debug\Distance.exe.config
+D:\Programs\git\Csharp\Distance.exercise\bin\Debug\Distance.exe
+D:\Programs\git\Csharp\Distance.exercise\bin\Debug\Distance.pdb
+D:\Programs\git\Csharp\Distance.exercise\bin\Debug\TestingRoom.dll
+D:\Programs\git\Csharp\Distance.exercise\obj\Debug\Distance.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Distance.exercise\obj\Debug\Distance.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Distance.exercise\obj\Debug\Distance.exe
+D:\Programs\git\Csharp\Distance.exercise\obj\Debug\Distance.pdb

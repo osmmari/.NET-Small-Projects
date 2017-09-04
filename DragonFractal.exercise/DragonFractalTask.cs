@@ -29,22 +29,30 @@ namespace Fractals
 			*/
 
             var random = new Random(seed);
-            double x = 1;
-            double y = 0;
+            double x = 1.0;
+            double y = 0.0;
+            double angle45 = Math.PI * 45 / 180;
+            double angle135 = Math.PI * 135 / 180;
             //double xNew, yNew;
             for (int i = 0; i < iterationsCount; i++)
             {
-                    var nextNumber = random.Next(1);
+                    var nextNumber = random.Next(2);
                     if (nextNumber > 0)
                     {
-                        x = (x * Math.Cos(45) - y * Math.Sin(45)) / Math.Sqrt(2);
-                        y = (x * Math.Sin(45) + y * Math.Cos(45)) / Math.Sqrt(2);
-                    }
+                        var xNew = (x * Math.Cos(angle45) - y * Math.Sin(angle45)) / Math.Sqrt(2);
+                        var yNew = (x * Math.Sin(angle45) + y * Math.Cos(angle45)) / Math.Sqrt(2);
+                    x = xNew;
+                    y = yNew;
+                }
                     else
                     {
-                        x = (x * Math.Cos(135) - y * Math.Sin(135)) / Math.Sqrt(2) + 1;
-                        y = (x * Math.Sin(135) + y * Math.Cos(135)) / Math.Sqrt(2);
-                    }
+                        var xNew = (x * Math.Cos(angle135) - y * Math.Sin(angle135)) / Math.Sqrt(2) + 1;
+                        var yNew = (x * Math.Sin(angle135) + y * Math.Cos(angle135)) / Math.Sqrt(2);
+                    x = xNew;
+                    y = yNew;
+                }
+                //x = (int)Math.Ceiling(x);
+                //y = (int)Math.Ceiling(y);
                     pixels.SetPixel(x, y);
             }
         }

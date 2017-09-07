@@ -1,0 +1,10 @@
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\names.txt
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\Names.exe.config
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\Names.exe
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\Names.pdb
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\ZedGraph.dll
+D:\Programs\git\Csharp\Names.exercise\bin\Debug\ZedGraph.xml
+D:\Programs\git\Csharp\Names.exercise\obj\Debug\Names.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Names.exercise\obj\Debug\Names.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Names.exercise\obj\Debug\Names.exe
+D:\Programs\git\Csharp\Names.exercise\obj\Debug\Names.pdb

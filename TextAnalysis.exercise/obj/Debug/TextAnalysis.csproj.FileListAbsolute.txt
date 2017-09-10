@@ -1,0 +1,11 @@
+D:\Programs\git\Csharp\TextAnalysis.exercise\bin\Debug\HarryPotterText.txt
+D:\Programs\git\Csharp\TextAnalysis.exercise\bin\Debug\TextAnalysis.exe.config
+D:\Programs\git\Csharp\TextAnalysis.exercise\bin\Debug\TextAnalysis.exe
+D:\Programs\git\Csharp\TextAnalysis.exercise\bin\Debug\TextAnalysis.pdb
+D:\Programs\git\Csharp\TextAnalysis.exercise\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.Properties.Resources.resources
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.exe
+D:\Programs\git\Csharp\TextAnalysis.exercise\obj\Debug\TextAnalysis.pdb

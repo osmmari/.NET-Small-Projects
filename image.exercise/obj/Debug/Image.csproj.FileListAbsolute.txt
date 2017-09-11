@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\image.exercise\bin\Debug\eurobot.bmp
+D:\Programs\git\Csharp\image.exercise\bin\Debug\Recognizer.exe.config
+D:\Programs\git\Csharp\image.exercise\bin\Debug\Recognizer.exe
+D:\Programs\git\Csharp\image.exercise\bin\Debug\Recognizer.pdb
+D:\Programs\git\Csharp\image.exercise\obj\Debug\Image.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\image.exercise\obj\Debug\Image.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\image.exercise\obj\Debug\Recognizer.exe
+D:\Programs\git\Csharp\image.exercise\obj\Debug\Recognizer.pdb

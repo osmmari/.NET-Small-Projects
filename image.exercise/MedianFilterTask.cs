@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Recognizer
 {
@@ -20,15 +21,17 @@ namespace Recognizer
                 for (int y = 0; y < original.GetLength(1); y++)
                 {
                     int width = 3;
-                    int heght = 3;
+                    int height = 3;
 
-                    if (x == 0) width = 2;
+                    if (original.GetLength(0) < 2) width = 1;
                     else if (x == original.GetLength(0) - 1) width = -2;
+                    else if (x == 0) width = 2;
 
-                    if (y == 0) heght = 2;
-                    else if (y == original.GetLength(1) - 1) heght = -2;
+                    if (original.GetLength(1) < 2) height = 1;
+                    else if (y == original.GetLength(1) - 1) height = -2;
+                    else if (y == 0) height = 2;
 
-                    resultImage[x, y] = Median(original, x, y, width, heght);
+                    resultImage[x, y] = Median(original, x, y, width, height);
                 }
 
             return resultImage;
@@ -36,18 +39,37 @@ namespace Recognizer
 
         public static double Median(double[,] original, int x, int y, int windowWidth, int windowHeight)
         {
-            double result = original[x, y];
-            int count = 1;
+            double result;
+            var listMed = new List<double> { original[x, y] };
 
-            if (windowWidth == 3) { result += original[x - 1, y] + original[x + 1, y]; count += 2; }
-            else if (windowWidth == 2) { result += original[x + 1, y]; count++; }
-            else { result += original[x - 1, y]; count++; }
+            if (windowWidth == 3) { listMed.Add(original[x - 1, y]); listMed.Add(original[x + 1, y]); }
+            else if (windowWidth == 2) { listMed.Add(original[x + 1, y]); }
+            else if (windowWidth == -2) { listMed.Add(original[x - 1, y]); }
 
-            if (windowHeight == 3) { result += original[x, y - 1] + original[x, y + 1]; count += 2; }
-            else if (windowHeight == 2) { result += original[x, y + 1]; count++; }
-            else { result += original[x, y - 1]; count++; }
+            if (windowHeight == 3) { listMed.Add(original[x, y - 1]); listMed.Add(original[x, y + 1]); }
+            else if (windowHeight == 2) { listMed.Add(original[x, y + 1]); }
+            else if (windowHeight == -2) { listMed.Add(original[x, y - 1]); }
 
-            return result / count;
+            if (windowHeight == 2 && windowWidth == 2) { listMed.Add(original[x + 1, y + 1]); }
+            else if (windowHeight == -2 && windowWidth == -2) { listMed.Add(original[x - 1, y - 1]); }
+            else if (windowWidth == 3 && windowHeight == 3)
+            {
+                listMed.Add(original[x - 1, y - 1]); listMed.Add(original[x + 1, y - 1]);
+                listMed.Add(original[x - 1, y + 1]); listMed.Add(original[x + 1, y + 1]);
+            }
+            else if (windowWidth == 2 && windowHeight == 3) { listMed.Add(original[x + 1, y - 1]); listMed.Add(original[x + 1, y + 1]); }
+            else if (windowWidth == 3 && windowHeight == 2) { listMed.Add(original[x - 1, y + 1]); listMed.Add(original[x + 1, y + 1]); }
+            else if (windowWidth == 3 && windowHeight == -2) { listMed.Add(original[x - 1, y - 1]); listMed.Add(original[x + 1, y - 1]); }
+            else if (windowWidth == -2 && windowHeight == 3) { listMed.Add(original[x - 1, y - 1]); listMed.Add(original[x - 1, y + 1]); }
+            else if (windowWidth == -2 && windowHeight == 2) { listMed.Add(original[x - 1, y + 1]); }
+            else if (windowWidth == 2 && windowHeight == -2) { listMed.Add(original[x + 1, y - 1]); }
+
+            listMed.Sort();
+
+            if (listMed.Count % 2 == 1) { result = listMed[listMed.Count / 2]; }
+            else { result = (listMed[(listMed.Count / 2) - 1] + listMed[listMed.Count / 2]) / 2; }
+
+            return result;
         }
     }
 }

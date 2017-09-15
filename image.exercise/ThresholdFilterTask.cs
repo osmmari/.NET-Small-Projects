@@ -18,7 +18,7 @@ namespace Recognizer
         {
             var resultImage = new double[original.GetLength(0), original.GetLength(1)];
 
-            int numberOfPixels = (int)(original.GetLength(0) * original.GetLength(1) * threshold);
+            int numberOfPixelsWhite = (int)(original.GetLength(0) * original.GetLength(1) * threshold);
             var allElements = new List<double>();
             foreach (var element in original)
             {
@@ -26,7 +26,9 @@ namespace Recognizer
             }
             allElements.Sort();
             allElements.Reverse();
-            double T = allElements[numberOfPixels];
+
+            double T = numberOfPixelsWhite > 0 ? allElements[numberOfPixelsWhite - 1] :
+                260.0;
 
             for (int x = 0; x < original.GetLength(0); x++)
                 for (int y = 0; y < original.GetLength(1); y++)

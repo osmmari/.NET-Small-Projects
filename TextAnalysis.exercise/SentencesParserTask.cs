@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace TextAnalysis
 {
@@ -23,7 +24,7 @@ namespace TextAnalysis
         public static List<List<string>> ParseSentences(string text)
         {
             // divide on sentences
-            Console.WriteLine(text);
+            //Console.WriteLine("|| Дан следующий текст: {0} || \n", text);
             var sentences = text.Split('.', '!', '?', ';', ':', '(', ')');
 
             // divide each sentence on words and create a list of correct words
@@ -32,28 +33,46 @@ namespace TextAnalysis
             foreach (var sentence in sentences)
             {
                 var words = new List<string>();
-                var wordsCollect = sentence.Split(' ', ',', '\"');
+                var separator = RemoveAllMud(sentence);
+                var wordsCollect = sentence.Split(separator);
                 foreach (var w in wordsCollect)
                 {
-                    var word = w.Replace("\\n", "").Replace("\\t", "").Replace("\\r", "");//.Replace("[", "").Replace("]", "");
+                    //Console.Write("Word before replace : {0}", w); Console.WriteLine();
+                    var word = Regex.Replace(w, @"\p{C}+", String.Empty);
+                    word = word.ToLower();
+                    //Console.Write("Word after : {0}", word); Console.WriteLine();
                     if (word.Length > 0)
-                    if (!IsWordInStopWords(word) && (char.IsLetter(word[0]) || word.StartsWith("\'"))) words.Add(word);
+                        if (!IsWordInStopWords(word) && (char.IsLetter(word[0]) || word.StartsWith("\'")))
+                        {
+                            words.Add(word);
+                        }
                 }
                 if (words.Count > 0) resultSentences.Add(words);
-                //foreach (var s in words) Console.Write(s);
-                //Console.WriteLine();
+                /*
+                foreach (var s in words) Console.Write(s);
+                Console.WriteLine();
+                */
             }
-            Console.WriteLine();
+            //Console.WriteLine("--------------------------------------");
             return resultSentences;
         }
 
         public static bool IsWordInStopWords(string word)
         {
-            foreach (var stopWord in StopWords)
-            {
-                if (word == stopWord) return true;
-            }
+            foreach (var stopWord in StopWords) if (word == stopWord) return true;
             return false;
+        }
+
+        public static char[] RemoveAllMud(string sentence)
+        {
+            var separator = new char[sentence.Length];
+            int i = 0;
+            foreach (char symbol in sentence)
+            {
+                if (!char.IsLetter(symbol) && symbol != '\'') separator[i] = symbol;
+                i++;
+            }
+            return separator;
         }
 	}
 }

@@ -1,0 +1,11 @@
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.Properties.Resources.resources
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\GeometryPainting.exercise\bin\Debug\GeometryPainting.exe.config
+D:\Programs\git\Csharp\GeometryPainting.exercise\bin\Debug\GeometryPainting.exe
+D:\Programs\git\Csharp\GeometryPainting.exercise\bin\Debug\GeometryPainting.pdb
+D:\Programs\git\Csharp\GeometryPainting.exercise\bin\Debug\GeometryTasks.dll
+D:\Programs\git\Csharp\GeometryPainting.exercise\bin\Debug\GeometryTasks.pdb
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.exe
+D:\Programs\git\Csharp\GeometryPainting.exercise\obj\Debug\GeometryPainting.pdb

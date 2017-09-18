@@ -15,10 +15,6 @@ namespace TextAnalysis
 			for (int i = 0; i < Math.Min(10, sentences.Count); i++)
 				Console.WriteLine(string.Join("|", sentences[i]) + ".");
 
-			Console.WriteLine();
-
-            Console.ReadKey();
-
 			Console.WriteLine("FrequencyAnalysisTask:");
 			var frequency = FrequencyAnalysisTask.GetMostFrequentNextWords(sentences);
 			foreach (var keyValuePair in frequency.Take(10))
@@ -26,7 +22,10 @@ namespace TextAnalysis
 				Console.WriteLine($"{keyValuePair.Key}|{keyValuePair.Value}");
 			}
 
-			Console.WriteLine();
+            Console.WriteLine();
+            Console.ReadKey();
+
+            Console.WriteLine();
 			Console.WriteLine("BigramGeneratorTask:");
 			foreach (var start in new[] { "harry", "he", "boy", "ron", "wizard" })
 			{

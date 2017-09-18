@@ -16,7 +16,19 @@ namespace TextAnalysis
 			string phraseBeginning, 
 			int phraseWordsCount)
 		{
-			return phraseBeginning;
+            string resultSentence = phraseBeginning;
+
+            int i = 1;
+            while (i < phraseWordsCount)
+            {
+                if (!mostFrequentNextWords.ContainsKey(phraseBeginning)) return resultSentence;
+                var phrase = mostFrequentNextWords[phraseBeginning];
+                resultSentence += " " + phrase;
+                phraseBeginning = phrase;
+                i++;
+            }
+
+			return resultSentence;
 		}
 	}
 }

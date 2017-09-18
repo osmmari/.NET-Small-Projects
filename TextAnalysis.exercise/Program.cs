@@ -23,16 +23,14 @@ namespace TextAnalysis
 			}
 
             Console.WriteLine();
-            Console.ReadKey();
-
-            Console.WriteLine();
 			Console.WriteLine("BigramGeneratorTask:");
 			foreach (var start in new[] { "harry", "he", "boy", "ron", "wizard" })
 			{
 				var phrase = BigramGeneratorTask.ContinuePhraseWithBigramms(frequency, start, 5);
 				Console.WriteLine(phrase);
 			}
-			/*
+
+            /*
 			Эту часть задания можете выполнить по желанию.
 
 			Console.WriteLine();
@@ -43,6 +41,6 @@ namespace TextAnalysis
 				Console.WriteLine(phrase);
 			}
 			*/
-		}
+        }
 	}
 }

@@ -1,0 +1,17 @@
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\data.txt
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\table-parser.Test.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\table-parser.Test.pdb
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\TableParser.exe
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\TableParser.pdb
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\TableParser.exe.config
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Programs\git\Csharp\table-parser.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Programs\git\Csharp\table-parser.Test\obj\Debug\table-parser.Test.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\table-parser.Test\obj\Debug\table-parser.Test.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\table-parser.Test\obj\Debug\table-parser.Test.dll
+D:\Programs\git\Csharp\table-parser.Test\obj\Debug\table-parser.Test.pdb

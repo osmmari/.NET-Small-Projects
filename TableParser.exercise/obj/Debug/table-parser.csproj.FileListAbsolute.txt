@@ -1,0 +1,10 @@
+D:\Programs\git\Csharp\TableParser.exercise\bin\Debug\data.txt
+D:\Programs\git\Csharp\TableParser.exercise\bin\Debug\TableParser.exe.config
+D:\Programs\git\Csharp\TableParser.exercise\bin\Debug\TableParser.exe
+D:\Programs\git\Csharp\TableParser.exercise\bin\Debug\TableParser.pdb
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\table-parser.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\TableParser.Properties.Resources.resources
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\table-parser.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\table-parser.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\TableParser.exe
+D:\Programs\git\Csharp\TableParser.exercise\obj\Debug\TableParser.pdb

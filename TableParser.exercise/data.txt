@@ -1,0 +1,7 @@
+﻿abc "def g h
+a "bcd ef" 'x y'
+1 2	3
+"a 'b' 'c' d" '"1" "2" "3"'
+a"b c d e"f
+"a \"c\""
+"\\" b

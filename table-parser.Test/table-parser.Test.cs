@@ -13,7 +13,8 @@ namespace table_parser.Test
         {
             var result = FieldsParserTask.ParseLine(input);
 
-            Assert.AreEqual(result, array);
+            CollectionAssert.AreEqual(result, array);
+            //Assert.AreEqual(result, array);
         }
 
         [TestMethod]

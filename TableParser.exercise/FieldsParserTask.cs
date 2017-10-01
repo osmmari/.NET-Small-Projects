@@ -26,6 +26,8 @@ namespace TableParser
             Console.WriteLine("{0} \n", line);
             foreach (var a in result) Console.Write("{0} ", a);
 
+            result.Remove(null);
+
             return result; // сокращенный синтаксис для инициализации коллекции.
         }
 
@@ -62,6 +64,8 @@ namespace TableParser
                 }
             }
             
+            if (length == 0) { Index = line.Length; return null; }
+
             return line.Substring(startIndex, length);
                 //new Token(line, startIndex, length);
         }

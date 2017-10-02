@@ -23,10 +23,12 @@ namespace TableParser
                 result.Add(ReadField(line, Index));
             }
 
-            Console.WriteLine("{0} \n", line);
-            foreach (var a in result) Console.Write("{0} ", a);
+            //Console.WriteLine("{0} \n", line);
+            //foreach (var a in result) Console.Write("{0} ", a);
 
             result.Remove(null);
+
+            Console.WriteLine(line);
 
             return result; // сокращенный синтаксис для инициализации коллекции.
         }

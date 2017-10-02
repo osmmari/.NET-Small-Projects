@@ -100,5 +100,11 @@ namespace table_parser.Test
         {
             Test("\'a ", new List<string> { "a " });
         }
+
+        [TestMethod]
+        public void Test15()
+        {
+            Test("'\\\\\\'", new List<string> { "\\\\\\" });
+        }
     }
 }

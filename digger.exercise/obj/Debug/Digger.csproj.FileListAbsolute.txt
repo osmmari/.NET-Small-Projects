@@ -1,0 +1,15 @@
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\Images\Digger.png
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\Images\Gold.png
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\Images\Monster.png
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\Images\Sack.png
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\Images\Terrain.png
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\11-digger.exe.config
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\11-digger.exe
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\11-digger.pdb
+D:\Programs\git\Csharp\digger.exercise\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\Digger.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\Digger.Properties.Resources.resources
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\Digger.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\Digger.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\11-digger.exe
+D:\Programs\git\Csharp\digger.exercise\obj\Debug\11-digger.pdb

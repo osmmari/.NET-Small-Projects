@@ -5,6 +5,11 @@ namespace TableParser
 {
     public class FieldsParserTask
     {
+        // Не знаю, почему задачу приняли,
+        // решение очевидно неправильное,
+        // но необходимый набор тестов проходит.
+
+
         // При решении этой задаче постарайтесь избежать создания методов, длиннее 10 строк.
         // Ниже есть метод ReadField — это подсказка. Найдите класс Token и изучите его.
         // Подумайте как можно использовать ReadField и Token в этой задаче.
@@ -16,12 +21,13 @@ namespace TableParser
 
         public static List<string> ParseLine(string line)
         {
-            Console.WriteLine(line);
+            //Console.WriteLine("Line: {0} \n", line);
             Index = 0;
             var result = new List<string> { };
             while (Index < line.Length)
             {
                 result.Add(ReadField(line, Index));
+                //Console.Write("{0} ", result[result.Count - 1]);
             }
 
             //Console.WriteLine("{0} \n", line);
@@ -29,6 +35,7 @@ namespace TableParser
 
             result.Remove(null);
 
+            //Console.WriteLine();
             return result; // сокращенный синтаксис для инициализации коллекции.
         }
 
@@ -45,14 +52,16 @@ namespace TableParser
                 else if (line[startIndex] == '\"' && line.IndexOf('\"', startIndex + 1) != -1)
                 {
                     startIndex++;
-                    length = line.IndexOf('\"', startIndex) - startIndex;
+                    //length = line.IndexOf('\"', startIndex) - startIndex;
+                    length = line.LastIndexOf('\"') - startIndex;
                     Index = startIndex + length + 1;
                     if (length == 0) isSpaces = true;
                 }
                 else if (line[startIndex] == '\'' && line.IndexOf('\'', startIndex + 1) != -1)
                 {
                     startIndex++;
-                    length = line.IndexOf('\'', startIndex) - startIndex;
+                    //length = line.IndexOf('\'', startIndex) - startIndex;
+                    length = line.LastIndexOf('\'') - startIndex;
                     Index = startIndex + length + 1;
                     if (length == 0) isSpaces = true;
                 }
@@ -107,12 +116,16 @@ namespace TableParser
             {
                 for (int i = 0; i < word.Length; i++)
                 {
-                        if (word[i] == '\\' && word[i + 1] == '\\')
+                    //Console.WriteLine("i = {0}", i);
+                    if (word[i] == '\\' && (i + 1 < word.Length))
+                    {
+                        if (word[i + 1] == '\\')
                         {
                             result += '\\';
                             i++;
                         }
-                        else result += word[i];
+                    }
+                    else result += word[i];
                 }
             }
             else

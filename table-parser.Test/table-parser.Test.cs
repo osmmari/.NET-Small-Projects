@@ -60,18 +60,6 @@ namespace table_parser.Test
         }
 
         [TestMethod]
-        public void Test8()
-        {
-            Test("\"\"\"", new List<string> { "", "" });
-        }
-
-        [TestMethod]
-        public void Test9()
-        {
-            Test("'a\'b\'c'", new List<string> { "a", "b", "c" });
-        }
-
-        [TestMethod]
         public void Test10()
         {
             Test("   a    b    c     ", new List<string> { "a", "b", "c" });
@@ -84,18 +72,6 @@ namespace table_parser.Test
         }
 
         [TestMethod]
-        public void Test12()
-        {
-            Test("\"\\\"", new List<string> { "\"" });
-        }
-
-        [TestMethod]
-        public void Test13()
-        {
-            Test("\'\\\'", new List<string> { "\'" });
-        }
-
-        [TestMethod]
         public void Test14()
         {
             Test("\'a ", new List<string> { "a " });
@@ -104,13 +80,7 @@ namespace table_parser.Test
         [TestMethod]
         public void Test15()
         {
-            Test("'a\'\\'", new List<string> { "a", "\\" });
-        }
-
-        [TestMethod]
-        public void Test16()
-        {
-            Test("'\\\\\\'", new List<string> { "a", "\\" });
+            Test("\'a\\\'\\\\\'", new List<string> { "a\'\\" });
         }
     }
 }

@@ -16,8 +16,9 @@ namespace TableParser
 
         public static List<string> ParseLine(string line)
         {
+            Console.WriteLine(line);
             Index = 0;
-            var result = new List<string> {};
+            var result = new List<string> { };
             while (Index < line.Length)
             {
                 result.Add(ReadField(line, Index));
@@ -28,8 +29,6 @@ namespace TableParser
 
             result.Remove(null);
 
-            Console.WriteLine(line);
-
             return result; // сокращенный синтаксис для инициализации коллекции.
         }
 
@@ -37,27 +36,32 @@ namespace TableParser
         private static string ReadField(string line, int startIndex)
         {
             int length = 0;
+            bool isSpaces = false;
 
-            while (startIndex < line.Length && length == 0)
+            //while (startIndex < line.Length && length == 0)
+            while (startIndex < line.Length && length == 0 && !isSpaces)
             {
-            if (line[startIndex] == ' ') { startIndex++; }
-            else if (line[startIndex] == '\"' && line.IndexOf('\"', startIndex + 1) != -1)
-            {
-                startIndex++;
-                length = line.IndexOf('\"', startIndex) - startIndex;
+                if (line[startIndex] == ' ') { startIndex++; }
+                else if (line[startIndex] == '\"' && line.IndexOf('\"', startIndex + 1) != -1)
+                {
+                    startIndex++;
+                    length = line.IndexOf('\"', startIndex) - startIndex;
                     Index = startIndex + length + 1;
-            }
-            else if (line[startIndex] == '\'' && line.IndexOf('\'', startIndex + 1) != -1)
-            {
+                    if (length == 0) isSpaces = true;
+                }
+                else if (line[startIndex] == '\'' && line.IndexOf('\'', startIndex + 1) != -1)
+                {
                     startIndex++;
                     length = line.IndexOf('\'', startIndex) - startIndex;
                     Index = startIndex + length + 1;
+                    if (length == 0) isSpaces = true;
                 }
-            else if (line[startIndex] == '\"' || line[startIndex] == '\'')
+                else if (line[startIndex] == '\"' || line[startIndex] == '\'')
                 {
                     startIndex++;
                     length = line.Length - startIndex;
                     Index = startIndex + length + 1;
+                    if (length == 0) isSpaces = true;
                 }
                 else
                 {
@@ -65,11 +69,18 @@ namespace TableParser
                     Index = startIndex + length;
                 }
             }
-            
-            if (length == 0) { Index = line.Length; return null; }
 
-            return line.Substring(startIndex, length);
-                //new Token(line, startIndex, length);
+            if (length == 0)
+            {
+                if (isSpaces)
+                {
+                    return "";
+                }
+                else { Index = line.Length; return null; }
+            }
+
+            return SlashRemove(line.Substring(startIndex, length));
+            //new Token(line, startIndex, length);
         }
 
         private static int Min(string line, int startIndex)
@@ -78,8 +89,8 @@ namespace TableParser
             var temp = new List<int>();
             foreach (var symbol in symbols)
             {
-                int ind = line.IndexOf(symbol, startIndex+1);
-                if ( ind != -1) temp.Add(ind);
+                int ind = line.IndexOf(symbol, startIndex + 1);
+                if (ind != -1) temp.Add(ind);
             }
             if (temp.Count > 0)
             {
@@ -87,6 +98,28 @@ namespace TableParser
                 return temp[0];
             }
             return line.Length;
+        }
+
+        private static string SlashRemove(string word)
+        {
+            string result = "";
+            if (word.Length > 1)
+            {
+                for (int i = 0; i < word.Length; i++)
+                {
+                        if (word[i] == '\\' && word[i + 1] == '\\')
+                        {
+                            result += '\\';
+                            i++;
+                        }
+                        else result += word[i];
+                }
+            }
+            else
+            {
+                result = word;
+            }
+            return result;
         }
     }
 }

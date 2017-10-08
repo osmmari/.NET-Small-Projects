@@ -50,7 +50,7 @@ namespace table_parser.Test
         [TestMethod]
         public void Test6()
         {
-            Test(@"""\\""", new List<string> { "\\" });
+            Test("\"\\\\\"", new List<string> { "\\" });
         }
 
         [TestMethod]
@@ -104,7 +104,13 @@ namespace table_parser.Test
         [TestMethod]
         public void Test15()
         {
-            Test("'\\\\\\'", new List<string> { "\\\\\\" });
+            Test("'a\'\\'", new List<string> { "a", "\\" });
+        }
+
+        [TestMethod]
+        public void Test16()
+        {
+            Test("'\\\\\\'", new List<string> { "a", "\\" });
         }
     }
 }

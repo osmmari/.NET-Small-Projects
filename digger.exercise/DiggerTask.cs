@@ -10,22 +10,22 @@ namespace Digger
     {
         public CreatureCommand Act(int x, int y)
         {
-            return new CreatureCommand();
+            return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
         }
 
         public bool DeadInConflict(ICreature conflictedObject)
         {
-            return false;
+            return true;
         }
 
         public int GetDrawingPriority()
         {
-            return 2;
+            return 5;
         }
 
         public string GetImageFileName()
         {
-            return "Terrain";
+            return "Terrain.png";
         }
     }
 
@@ -41,6 +41,7 @@ namespace Digger
 
         public CreatureCommand Act(int x, int y)
         {
+            //Console.WriteLine("x = {0}, y = {1} \n", x, y);
             switch(Game.KeyPressed)
             {
                 case System.Windows.Forms.Keys.Left:
@@ -56,23 +57,25 @@ namespace Digger
                     dY = 1;
                     break;
                 default:
+                    dX = 0;
+                    dY = 0;
                     break;
             }
             if (!(x + dX >= 0 && x + dX < Game.MapWidth &&
                 y + dY >= 0 && y + dY < Game.MapHeight))
             {
-                Console.WriteLine("x = {0}, y = {1}", x, y);
+                /*Console.WriteLine("x = {0}, y = {1}", x, y);
                 Console.WriteLine(x + dX > 0);
                 Console.WriteLine(x + dX < Game.MapWidth);
                 Console.WriteLine(y + dY > 0);
                 Console.WriteLine(y + dY < Game.MapHeight);
                 Console.WriteLine("dx = {0} dy = {1}", dX, dY);
-                Console.WriteLine("Width = {0}, Height = {1}", Game.MapWidth, Game.MapHeight);
+                Console.WriteLine("Width = {0}, Height = {1}", Game.MapWidth, Game.MapHeight);*/
                 dX = 0;
                 dY = 0;
             }
-            if (Game.Map[x + dX, y + dY].ToString().Equals("T"))
-                Console.WriteLine("Its working");
+            //var map = Game.Map[x + dX, y + dY].GetImageFileName();
+            //Console.WriteLine("{0} \n", map);
             return new CreatureCommand() { DeltaX = dX, DeltaY = dY };
         }
 
@@ -83,12 +86,12 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 1;
+            return 3;
         }
 
         public string GetImageFileName()
         {
-            return "Player";
+            return "Digger.png";
         }
     }
 }

@@ -41,7 +41,6 @@ namespace Digger
 
         public CreatureCommand Act(int x, int y)
         {
-            //Console.WriteLine("x = {0}, y = {1} \n", x, y);
             switch(Game.KeyPressed)
             {
                 case System.Windows.Forms.Keys.Left:
@@ -64,23 +63,20 @@ namespace Digger
             if (!(x + dX >= 0 && x + dX < Game.MapWidth &&
                 y + dY >= 0 && y + dY < Game.MapHeight))
             {
-                /*Console.WriteLine("x = {0}, y = {1}", x, y);
-                Console.WriteLine(x + dX > 0);
-                Console.WriteLine(x + dX < Game.MapWidth);
-                Console.WriteLine(y + dY > 0);
-                Console.WriteLine(y + dY < Game.MapHeight);
-                Console.WriteLine("dx = {0} dy = {1}", dX, dY);
-                Console.WriteLine("Width = {0}, Height = {1}", Game.MapWidth, Game.MapHeight);*/
                 dX = 0;
                 dY = 0;
+            } 
+            if (Game.Map[x + dX, y + dY] != null)
+            {
+                if (Game.Map[x + dX, y + dY].ToString() == "Digger.Sack")
+                { dX = 0; dY = 0; }
             }
-            //var map = Game.Map[x + dX, y + dY].GetImageFileName();
-            //Console.WriteLine("{0} \n", map);
             return new CreatureCommand() { DeltaX = dX, DeltaY = dY };
         }
 
         public bool DeadInConflict(ICreature conflictedObject)
         {
+            if (conflictedObject.ToString() == "Digger.Gold") Game.Scores += 10;
             return false;
         }
 
@@ -92,6 +88,68 @@ namespace Digger
         public string GetImageFileName()
         {
             return "Digger.png";
+        }
+    }
+
+    class Sack : ICreature
+    {
+        private static int counter = 0;
+
+        public virtual CreatureCommand Act(int x, int y)
+        {
+            if (y < Game.MapHeight - 1)
+            {
+                var map = Game.Map[x, y + 1];
+                if (map == null)
+                {
+                    counter++;
+                    return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
+                }
+            }
+            if (counter > 1)
+                Game.Map[x, y] = new Digger.Gold();
+                //this = new Gold();
+            counter = 0;
+            return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
+        }
+
+        public virtual bool DeadInConflict(ICreature conflictedObject)
+        {
+            return false;
+        }
+
+        public virtual int GetDrawingPriority()
+        {
+            return 3;
+        }
+
+        public virtual string GetImageFileName()
+        {
+            return "Sack.png";
+        }
+    }
+
+    class Gold : Sack, ICreature 
+    {
+        public override CreatureCommand Act(int x, int y)
+        {
+            return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
+        }
+
+        public override bool DeadInConflict(ICreature conflictedObject)
+        {
+            if (conflictedObject.ToString() == "Digger.Player") return true;
+            return false;
+        }
+
+        public override int GetDrawingPriority()
+        {
+            return 3;
+        }
+
+        public override string GetImageFileName()
+        {
+            return "Gold.png";
         }
     }
 }

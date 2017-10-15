@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Digger
 {
-    class Terrain : ICreature
+    public class Terrain : ICreature
     {
         public CreatureCommand Act(int x, int y)
         {
@@ -20,7 +20,7 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 1;
+            return 2;
         }
 
         public string GetImageFileName()
@@ -29,15 +29,9 @@ namespace Digger
         }
     }
 
-    class Player : ICreature
+    public class Player : ICreature
     {
-        private int x;
-        private int y;
-
-        public int X { get { return x; } set { x = value; } }
-        public int Y { get { return y; } set { y = value; } }
-
-        int dX, dY = 0;
+        static int dX, dY = 0;
         public static bool dead = false;
 
         public CreatureCommand Act(int x, int y)
@@ -57,20 +51,16 @@ namespace Digger
                     dY = 1;
                     break;
                 default:
-                    dX = 0;
-                    dY = 0;
+                    Stay();
                     break;
             }
             if (!(x + dX >= 0 && x + dX < Game.MapWidth &&
                 y + dY >= 0 && y + dY < Game.MapHeight))
-            {
-                dX = 0;
-                dY = 0;
-            } 
+                    Stay();
             if (Game.Map[x + dX, y + dY] != null)
             {
                 if (Game.Map[x + dX, y + dY].ToString() == "Digger.Sack")
-                { dX = 0; dY = 0; }
+                    Stay();
             }
             return new CreatureCommand() { DeltaX = dX, DeltaY = dY };
         }
@@ -79,58 +69,47 @@ namespace Digger
         {
             if (conflictedObject.ToString() == "Digger.Gold")
                 Game.Scores += 10;
-            if (Sack.deadlyForPlayer)
-            {
-                dead = true;
+            if (conflictedObject.ToString() == "Digger.Sack")
                 return true;
-            }
             return false;
         }
 
         public int GetDrawingPriority()
         {
-            return 0;
+            return 1;
         }
 
         public string GetImageFileName()
         {
             return "Digger.png";
         }
+
+        private static void Stay()
+        {
+            dX = 0;
+            dY = 0;
+        }
     }
 
-    class Sack : ICreature
+    public class Sack : ICreature
     {
         private int counter = 0;
         public static bool deadlyForPlayer = false;
 
         public CreatureCommand Act(int x, int y)
-        {
+         {
             if (y < Game.MapHeight - 1)
             {
                 var map = Game.Map[x, y + 1];
-                if (map == null)
+                if (map == null || (counter > 0 && map.ToString() == "Digger.Player"))
                 {
-                   /*if (Player.dead)
-                    {
-                        if (deadlyForPlayer)
-                        {
-                            deadlyForPlayer = false;
-                            return new CreatureCommand() { DeltaX = 0, DeltaY = 4 };
-                        }
-                        return DoNothing();
-                    }*/
-                    counter++;
-                    return Falling();
-                }
-                if (counter > 0 && map.ToString() == "Digger.Player")
-                {
-                    deadlyForPlayer = true;
                     counter++;
                     return Falling();
                 }
             }
             if (counter > 1)
             {
+                counter = 0;
                 return new CreatureCommand() { DeltaX = 0, DeltaY = 0, TransformTo = new Gold() };
             }
             counter = 0;
@@ -144,7 +123,7 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 3;
+            return 4;
         }
 
         public string GetImageFileName()
@@ -163,7 +142,7 @@ namespace Digger
         }
     }
 
-    class Gold : ICreature 
+    public class Gold : ICreature 
     {
         public CreatureCommand Act(int x, int y)
         {
@@ -178,7 +157,7 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 2;
+            return 3;
         }
 
         public string GetImageFileName()

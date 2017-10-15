@@ -38,7 +38,16 @@ S TTST  TG
  TGST MTTT
  T  TMTTTT";
 
-		public static void CreateMap()
+        private const string test = @"
+ S
+PT
+  
+  
+  
+  ";
+
+
+        public static void CreateMap()
 		{
 			Map = CreatureMapCreator.CreateMap(mapWithPlayerTerrainSackGold);
 		}

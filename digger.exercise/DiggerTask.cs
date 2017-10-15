@@ -20,7 +20,7 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 5;
+            return 1;
         }
 
         public string GetImageFileName()
@@ -38,6 +38,7 @@ namespace Digger
         public int Y { get { return y; } set { y = value; } }
 
         int dX, dY = 0;
+        public static bool dead = false;
 
         public CreatureCommand Act(int x, int y)
         {
@@ -76,13 +77,19 @@ namespace Digger
 
         public bool DeadInConflict(ICreature conflictedObject)
         {
-            if (conflictedObject.ToString() == "Digger.Gold") Game.Scores += 10;
+            if (conflictedObject.ToString() == "Digger.Gold")
+                Game.Scores += 10;
+            if (Sack.deadlyForPlayer)
+            {
+                dead = true;
+                return true;
+            }
             return false;
         }
 
         public int GetDrawingPriority()
         {
-            return 3;
+            return 0;
         }
 
         public string GetImageFileName()
@@ -93,61 +100,88 @@ namespace Digger
 
     class Sack : ICreature
     {
-        private static int counter = 0;
+        private int counter = 0;
+        public static bool deadlyForPlayer = false;
 
-        public virtual CreatureCommand Act(int x, int y)
+        public CreatureCommand Act(int x, int y)
         {
             if (y < Game.MapHeight - 1)
             {
                 var map = Game.Map[x, y + 1];
                 if (map == null)
                 {
+                   /*if (Player.dead)
+                    {
+                        if (deadlyForPlayer)
+                        {
+                            deadlyForPlayer = false;
+                            return new CreatureCommand() { DeltaX = 0, DeltaY = 4 };
+                        }
+                        return DoNothing();
+                    }*/
                     counter++;
-                    return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
+                    return Falling();
+                }
+                if (counter > 0 && map.ToString() == "Digger.Player")
+                {
+                    deadlyForPlayer = true;
+                    counter++;
+                    return Falling();
                 }
             }
             if (counter > 1)
-                Game.Map[x, y] = new Digger.Gold();
-                //this = new Gold();
+            {
+                return new CreatureCommand() { DeltaX = 0, DeltaY = 0, TransformTo = new Gold() };
+            }
             counter = 0;
-            return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
+            return DoNothing();
         }
 
-        public virtual bool DeadInConflict(ICreature conflictedObject)
+        public bool DeadInConflict(ICreature conflictedObject)
         {
             return false;
         }
 
-        public virtual int GetDrawingPriority()
+        public int GetDrawingPriority()
         {
             return 3;
         }
 
-        public virtual string GetImageFileName()
+        public string GetImageFileName()
         {
             return "Sack.png";
         }
+
+        private CreatureCommand Falling()
+        {
+            return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
+        }
+
+        private CreatureCommand DoNothing()
+        {
+            return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
+        }
     }
 
-    class Gold : Sack, ICreature 
+    class Gold : ICreature 
     {
-        public override CreatureCommand Act(int x, int y)
+        public CreatureCommand Act(int x, int y)
         {
             return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
         }
 
-        public override bool DeadInConflict(ICreature conflictedObject)
+        public bool DeadInConflict(ICreature conflictedObject)
         {
             if (conflictedObject.ToString() == "Digger.Player") return true;
             return false;
         }
 
-        public override int GetDrawingPriority()
+        public int GetDrawingPriority()
         {
-            return 3;
+            return 2;
         }
 
-        public override string GetImageFileName()
+        public string GetImageFileName()
         {
             return "Gold.png";
         }

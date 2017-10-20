@@ -31,11 +31,14 @@ namespace Digger
 
     public class Player : ICreature
     {
+        public static int debugX, debugY = 0;
         static int dX, dY = 0;
         public static bool dead = false;
 
         public CreatureCommand Act(int x, int y)
         {
+            debugX = x;
+            debugY = y;
             switch(Game.KeyPressed)
             {
                 case System.Windows.Forms.Keys.Left:
@@ -70,13 +73,17 @@ namespace Digger
             if (conflictedObject.ToString() == "Digger.Gold")
                 Game.Scores += 10;
             if (conflictedObject.ToString() == "Digger.Sack")
+            {
+                Console.WriteLine("x = {0}, y = {1}", debugX, debugY);
+                dead = true;
                 return true;
+            }
             return false;
         }
 
         public int GetDrawingPriority()
         {
-            return 1;
+            return 0;
         }
 
         public string GetImageFileName()
@@ -95,13 +102,15 @@ namespace Digger
     {
         private int counter = 0;
         public static bool deadlyForPlayer = false;
+        //private bool falling = false;
 
         public CreatureCommand Act(int x, int y)
          {
             if (y < Game.MapHeight - 1)
             {
                 var map = Game.Map[x, y + 1];
-                if (map == null || (counter > 0 && map.ToString() == "Digger.Player"))
+                if (map == null ||
+                    (counter > 0 && map.ToString() == "Digger.Player"))
                 {
                     counter++;
                     return Falling();
@@ -123,7 +132,7 @@ namespace Digger
 
         public int GetDrawingPriority()
         {
-            return 4;
+            return 5;
         }
 
         public string GetImageFileName()
@@ -133,6 +142,7 @@ namespace Digger
 
         private CreatureCommand Falling()
         {
+            if (Player.dead) Console.WriteLine("поехали");
             return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
         }
 

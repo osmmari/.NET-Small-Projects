@@ -42,16 +42,20 @@ namespace Digger
             switch(Game.KeyPressed)
             {
                 case System.Windows.Forms.Keys.Left:
+                    dY = 0;
                     dX = -1;
                     break;
                 case System.Windows.Forms.Keys.Up:
                     dY = -1;
+                    dX = 0;
                     break;
                 case System.Windows.Forms.Keys.Right:
+                    dY = 0;
                     dX = 1;
                     break;
                 case System.Windows.Forms.Keys.Down:
                     dY = 1;
+                    dX = 0;
                     break;
                 default:
                     Stay();
@@ -74,7 +78,7 @@ namespace Digger
                 Game.Scores += 10;
             if (conflictedObject.ToString() == "Digger.Sack")
             {
-                Console.WriteLine("x = {0}, y = {1}", debugX, debugY);
+                //Console.WriteLine("x = {0}, y = {1}", debugX, debugY);
                 dead = true;
                 return true;
             }
@@ -142,7 +146,7 @@ namespace Digger
 
         private CreatureCommand Falling()
         {
-            if (Player.dead) Console.WriteLine("поехали");
+            //if (Player.dead) Console.WriteLine("поехали");
             return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
         }
 

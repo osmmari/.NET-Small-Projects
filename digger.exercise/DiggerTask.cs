@@ -41,7 +41,7 @@ namespace Digger
             Y = y;
             //Monster.playerExist = true;
             //Monster.counterThatPlayerIsAlive = 0;
-            switch(Game.KeyPressed)
+            switch (Game.KeyPressed)
             {
                 case System.Windows.Forms.Keys.Left:
                     dY = 0;
@@ -65,7 +65,7 @@ namespace Digger
             }
             if (!(x + dX >= 0 && x + dX < Game.MapWidth &&
                 y + dY >= 0 && y + dY < Game.MapHeight))
-                    Stay();
+                Stay();
             if (Game.Map[x + dX, y + dY] != null)
             {
                 if (Game.Map[x + dX, y + dY].ToString() == "Digger.Sack")
@@ -113,7 +113,7 @@ namespace Digger
         public static bool deadlyForPlayer = false;
 
         public CreatureCommand Act(int x, int y)
-         {
+        {
             if (y < Game.MapHeight - 1)
             {
                 var map = Game.Map[x, y + 1];
@@ -122,7 +122,7 @@ namespace Digger
                     map.ToString() == "Digger.Monster")))
                 {
                     counter++;
-                    return Falling();
+                    return Fall();
                 }
             }
             if (counter > 1)
@@ -149,7 +149,7 @@ namespace Digger
             return "Sack.png";
         }
 
-        private CreatureCommand Falling()
+        private CreatureCommand Fall()
         {
             return new CreatureCommand() { DeltaX = 0, DeltaY = 1 };
         }
@@ -160,7 +160,7 @@ namespace Digger
         }
     }
 
-    public class Gold : ICreature 
+    public class Gold : ICreature
     {
         public CreatureCommand Act(int x, int y)
         {
@@ -170,10 +170,8 @@ namespace Digger
         public bool DeadInConflict(ICreature conflictedObject)
         {
             var neighbor = conflictedObject.ToString();
-            if (neighbor == "Digger.Player" || 
-                neighbor == "Digger.Monster")
-                return true;
-            return false;
+            return (neighbor == "Digger.Player" ||
+                neighbor == "Digger.Monster");
         }
 
         public int GetDrawingPriority()
@@ -199,10 +197,24 @@ namespace Digger
             //Console.WriteLine("I'm on {0} {1}", x, y);
             if (IsPlayerAlive())
             {
-                if (Player.X < x) dx = -1;
-                else if (Player.X > x) dx = 1;
-                else if (Player.Y < y) dy = -1;
-                else if (Player.Y > y) dy = 1;
+                if (Player.X == x)
+                {
+                    if (Player.Y < y) dy = -1;
+                    else if (Player.Y > y) dy = 1;
+                }
+                else if (Player.Y == y)
+                //else 
+                {
+                    if (Player.X < x) dx = -1;
+                    else if (Player.X > x) dx = 1;
+                }
+                else
+                {
+                    if (Player.X < x) dx = -1;
+                    else if (Player.X > x) dx = 1;
+                }
+                //Console.WriteLine("I'm on {0} {1} and planning to go on {2} {3}", x, y, x+dx, y+dy);
+                //Console.WriteLine("Digger on {0} {1}", Player.X, Player.Y);
             }
             else return Stay();
 
@@ -212,7 +224,7 @@ namespace Digger
 
             var map = Game.Map[x + dx, y + dy];
             if (map != null)
-                if (map.ToString() == "Digger.Terrain" || 
+                if (map.ToString() == "Digger.Terrain" ||
                     map.ToString() == "Digger.Sack" ||
                     map.ToString() == "Digger.Monster")
                     return Stay();
@@ -223,10 +235,8 @@ namespace Digger
         public bool DeadInConflict(ICreature conflictedObject)
         {
             var neighbor = conflictedObject.ToString();
-            if (neighbor == "Digger.Sack" ||
-                neighbor == "Digger.Monster")
-                return true;
-            return false;
+            return (neighbor == "Digger.Sack" ||
+                neighbor == "Digger.Monster");
         }
 
         public int GetDrawingPriority()
@@ -247,13 +257,18 @@ namespace Digger
 
         static private bool IsPlayerAlive()
         {
-            for(int i = 0; i < Game.MapWidth; i++)
-                for(int j = 0; j < Game.MapHeight; j++)
+            for (int i = 0; i < Game.MapWidth; i++)
+                for (int j = 0; j < Game.MapHeight; j++)
                 {
                     var map = Game.Map[i, j];
                     if (map != null)
                     {
-                        if (map.ToString() == "Digger.Player") return true;
+                        if (map.ToString() == "Digger.Player")
+                        {
+                            Player.X = i;
+                            Player.Y = j;
+                            return true;
+                        }
                     }
                 }
             return false;

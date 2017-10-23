@@ -39,9 +39,9 @@ S TTST  TG
  T  TMTTTT";
 
         private const string test = @"
-   
-  M
-   
+ M 
+ PM
+M  
    
    
    ";

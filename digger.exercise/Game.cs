@@ -39,17 +39,17 @@ S TTST  TG
  T  TMTTTT";
 
         private const string test = @"
- S
-PT
-  
-  
-  
-  ";
+   
+  M
+   
+   
+   
+   ";
 
 
         public static void CreateMap()
 		{
-			Map = CreatureMapCreator.CreateMap(mapWithPlayerTerrainSackGold);
+			Map = CreatureMapCreator.CreateMap(mapWithPlayerTerrainSackGoldMonster);
 		}
 	}
 }

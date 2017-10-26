@@ -1,0 +1,13 @@
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\Texts\0.txt
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\Texts\1.txt
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\Texts\2.txt
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\Texts\4.txt
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\PocketGoogle.exe.config
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\PocketGoogle.exe
+D:\Programs\git\Csharp\pocketgoogle.exercise\bin\Debug\PocketGoogle.pdb
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.Properties.Resources.resources
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.exe
+D:\Programs\git\Csharp\pocketgoogle.exercise\obj\Debug\PocketGoogle.pdb

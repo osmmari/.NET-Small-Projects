@@ -14,20 +14,23 @@ namespace PocketGoogle
 
         public int Id
         {
-            get { return id; }
-            set { id = value;}
+            //get { return id; }
+            set { id = value; }
         }
 
         public List<string> Words
         {
-            set { if (words.ContainsKey(id))
+            set
+            {
+                if (words.ContainsKey(id))
                     words[id].AddRange(value);
-                  else words.Add(id, value); }
+                else words.Add(id, value);
+            }
         }
 
         public void Add(int id, string documentText)
         {
-            Console.WriteLine("id = {0}, document = {1}", id, documentText);
+            //Console.WriteLine("id = {0}, document = {1}", id, documentText);
             Id = id;
             var listOfWords = documentText.Split(separator);
             Words = listOfWords.ToList<string>();
@@ -37,16 +40,16 @@ namespace PocketGoogle
         {
             //Console.WriteLine("GetIds");
             var result = new List<int>();
-            foreach(var id in words.Keys)
+            foreach (var id in words.Keys)
             {
-                foreach(var getWord in words[id])
+                foreach (var getWord in words[id])
                 {
                     if (getWord == word)
-                     {
-                            //Console.WriteLine("Trying add id {0}", id);
-                            result.Add(id);
-                            break;
-                     }
+                    {
+                        //Console.WriteLine("Trying add id {0}", id);
+                        result.Add(id);
+                        break;
+                    }
                 }
             }
             return result;
@@ -78,7 +81,8 @@ namespace PocketGoogle
 
         public void Remove(int id)
         {
-            words.Remove(id);
+            //words.Remove(id);
+            words[id] = new List<string>();
         }
     }
 }

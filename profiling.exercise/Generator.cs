@@ -37,26 +37,20 @@ namespace Profiling
 
             foreach (var index in Constants.FieldCounts)
             {
-                for (int i = 0; i < index; i++)
-                {
-                    result += "void PC" + i + "()\n{\n" +
-                        "var array = new C" + i + "[Constants.ArraySize];\n" +
-                        "for (int i = 0; i < Constants.ArraySize; i++) array[i] = new C" +
-                        i + "();\n}\n" +
-                        "void PS" + i + "()\n{\nvar array = new S" +
-                        i + "[Constants.ArraySize];\n}\n";
-                }
-
-                result += "\npublic void Call(bool isClass, int size, int count)\n{\n";
-                for (int i = 0; i < index; i++)
-                {
-                    string helpString1 = "PC" + i;
-                    string helpString2 = "PS" + i;
-                    result += Helper1(helpString1) + Helper1(helpString2);
-                }
-                result += "\nthrow new ArgumentException();\n}";
+                result += "void PC" + index + "()\n{\n" +
+                    "var array = new C" + index + "[Constants.ArraySize];\n" +
+                    "for (int i = 0; i < Constants.ArraySize; i++) array[i] = new C" +
+                    index + "();\n}\n" +
+                    "void PS" + index + "()\n{\nvar array = new S" +
+                    index + "[Constants.ArraySize];\n}\n";
             }
 
+            result += "\npublic void Call(bool isClass, int size, int count)\n{\n";
+            foreach (var index in Constants.FieldCounts)
+            {
+                result += HelperPC(index) + HelperPS(index);
+            }
+            result += "\nthrow new ArgumentException();\n}";
             result += "\n}";
             return result;
         }
@@ -66,10 +60,17 @@ namespace Profiling
             throw new NotImplementedException();
         }
 
-        private static string Helper1(string word)
+        private static string HelperPC(int number)
         {
-            return "if (isClass && size == 1)\n{\n" +
-                "for (int i = 0; i < count; i++) " + word + "();\n" +
+            return "if (isClass && size == " + number + ")\n{\n" +
+                "for (int i = 0; i < count; i++) PC" + number + "();\n" +
+                "return;\n}\n";
+        }
+
+        private static string HelperPS(int number)
+        {
+            return "if (!isClass && size == " + number + ")\n{\n" +
+                "for (int i = 0; i < count; i++) PS" + number + "();\n" +
                 "return;\n}\n";
         }
     }

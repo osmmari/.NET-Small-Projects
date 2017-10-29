@@ -8,72 +8,68 @@ namespace PocketGoogle
 {
     public class Indexer : IIndexer
     {
-        private Dictionary<int, List<string>> words = new Dictionary<int, List<string>> { };
-        private int id;
+        private Dictionary<int, string[]> words = new Dictionary<int, string[]> { };
+        private Dictionary<string, List<int>> ids = new Dictionary<string, List<int>> { };
         private readonly char[] separator = { ' ', '.', ',', '!', '?', ':', '-', '\r', '\n' };
-
-        public int Id
-        {
-            //get { return id; }
-            set { id = value; }
-        }
-
-        public List<string> Words
-        {
-            set
-            {
-                if (words.ContainsKey(id))
-                    words[id].AddRange(value);
-                else words.Add(id, value);
-            }
-        }
 
         public void Add(int id, string documentText)
         {
-            //Console.WriteLine("id = {0}, document = {1}", id, documentText);
-            Id = id;
+            //Console.WriteLine("id = {0}, text = {1}", id, documentText);
             var listOfWords = documentText.Split(separator);
-            Words = listOfWords.ToList<string>();
+            if (words.ContainsKey(id)) words[id] = words[id].Concat(listOfWords).ToArray();
+            else words.Add(id, listOfWords);
+
+            foreach (var word in listOfWords)
+            {
+                if (ids.ContainsKey(word))
+                {
+                    if (!ids[word].Contains(id))
+                        ids[word].Add(id);
+                }
+                else ids.Add(word, new List<int> { id });
+            }
         }
 
         public List<int> GetIds(string word)
         {
-            //Console.WriteLine("GetIds");
-            var result = new List<int>();
-            foreach (var id in words.Keys)
+            //Console.WriteLine("Get id of word {0}", word);
+            if (ids.ContainsKey(word))
             {
-                foreach (var getWord in words[id])
+                var needToDelete = new List<int>();
+                foreach (var id in ids[word])
                 {
-                    if (getWord == word)
+                    if (!words.ContainsKey(id))
                     {
-                        //Console.WriteLine("Trying add id {0}", id);
-                        result.Add(id);
-                        break;
+                        needToDelete.Add(id);
                     }
                 }
+                foreach (var id in needToDelete)
+                {
+                    ids[word].Remove(id);
+                }
+                return ids[word];
             }
-            return result;
+            return new List<int>();
         }
 
         public List<int> GetPositions(int id, string word)
         {
-            //Console.WriteLine("GetPos");
+            //Console.WriteLine("Get pos in id {0} of word {1}", id, word);
             var result = new List<int>();
-            int count = 0;
+            int index = 0;
             foreach (var getWord in words[id])
             {
-                if (getWord == "") count++;
+                if (getWord == "") index++;
                 else
                 {
                     if (getWord[0] == word[0])
                     {
-                        if (getWord.Equals(word))
+                        if (getWord == word)
                         {
-                            //Console.WriteLine("Trying add id {0}", id);
-                            result.Add(count);
+                            result.Add(index);
                         }
                     }
-                    count = count + getWord.Length + 1;
+                    index += getWord.Length + 1;
                 }
             }
             return result;
@@ -81,8 +77,8 @@ namespace PocketGoogle
 
         public void Remove(int id)
         {
-            //words.Remove(id);
-            words[id] = new List<string>();
+            //Console.WriteLine("Remove id {0}", id);
+            words.Remove(id);
         }
     }
 }

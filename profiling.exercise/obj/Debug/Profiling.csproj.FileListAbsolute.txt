@@ -1,0 +1,11 @@
+D:\Programs\git\Csharp\profiling.exercise\bin\Debug\Profiling.exe.config
+D:\Programs\git\Csharp\profiling.exercise\bin\Debug\Profiling.exe
+D:\Programs\git\Csharp\profiling.exercise\bin\Debug\Profiling.pdb
+D:\Programs\git\Csharp\profiling.exercise\bin\Debug\ZedGraph.dll
+D:\Programs\git\Csharp\profiling.exercise\bin\Debug\ZedGraph.xml
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.Properties.Resources.resources
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.exe
+D:\Programs\git\Csharp\profiling.exercise\obj\Debug\Profiling.pdb

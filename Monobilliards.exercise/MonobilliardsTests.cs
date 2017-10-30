@@ -41,6 +41,12 @@ namespace Monobilliards
         {
             AssertCheater(false, new[] { 2, 3, 1 });
         }
+
+        [Test]
+        public void Hidden11()
+        {
+            AssertCheater(false, new[] { 3, 5, 4, 2, 7, 6, 1, 9, 10, 8, 11 });
+        }
  
 		public void AssertCheater(bool isCheater, int[] balls)
 		{

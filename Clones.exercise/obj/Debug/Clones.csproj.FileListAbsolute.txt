@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\Clones.exercise\bin\Debug\Clones.exe.config
+D:\Programs\git\Csharp\Clones.exercise\bin\Debug\Clones.exe
+D:\Programs\git\Csharp\Clones.exercise\bin\Debug\Clones.pdb
+D:\Programs\git\Csharp\Clones.exercise\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Clones.exercise\obj\Debug\Clones.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Clones.exercise\obj\Debug\Clones.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Clones.exercise\obj\Debug\Clones.exe
+D:\Programs\git\Csharp\Clones.exercise\obj\Debug\Clones.pdb

@@ -6,8 +6,8 @@ namespace yield
 	{
 		public static IEnumerable<DataPoint> MovingAverage(this IEnumerable<DataPoint> data, int windowWidth)
 		{
-            bool isFirstItem = true;
-            double pastAverage = 0, minAverage = 0;
+            //bool isFirstItem = true;
+            double pastAverage = 0; //minAverage = 0;
             int n = 1;
 
             //foreach(var element in data) n++;

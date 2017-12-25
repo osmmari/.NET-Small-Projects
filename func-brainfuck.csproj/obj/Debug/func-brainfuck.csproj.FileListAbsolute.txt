@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\func-brainfuck.csproj\bin\Debug\brainfuck.exe.config
+D:\Programs\git\Csharp\func-brainfuck.csproj\bin\Debug\brainfuck.exe
+D:\Programs\git\Csharp\func-brainfuck.csproj\bin\Debug\brainfuck.pdb
+D:\Programs\git\Csharp\func-brainfuck.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\func-brainfuck.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\func-brainfuck.csproj\obj\Debug\func-brainfuck.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\func-brainfuck.csproj\obj\Debug\func-brainfuck.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\func-brainfuck.csproj\obj\Debug\brainfuck.exe
+D:\Programs\git\Csharp\func-brainfuck.csproj\obj\Debug\brainfuck.pdb

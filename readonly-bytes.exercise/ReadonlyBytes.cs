@@ -4,5 +4,25 @@ using System.Collections.Generic;
 
 namespace hashes
 {
-	// TODO: Создайте класс ReadonlyBytes
+    class ReadonlyBytes
+    {
+        public int Length
+        {
+            get; set;
+        }
+
+        public ReadonlyBytes()
+        {
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
 }

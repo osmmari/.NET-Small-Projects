@@ -33,9 +33,11 @@ namespace func.brainfuck
 
         public void Run()
 		{
-			while(InstructionPointer < instructions.Length && InstructionPointer > 0)
+			while(InstructionPointer < instructions.Length && InstructionPointer >= 0)
             {
-                commands[Instructions[InstructionPointer]](this);
+                var symbol = Instructions[InstructionPointer];
+                if (commands.ContainsKey(symbol))
+                    commands[symbol](this);
                 InstructionPointer++;
             }
 		}

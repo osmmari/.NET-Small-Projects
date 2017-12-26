@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Text;
 using NUnit.Framework;
 
@@ -126,4 +126,4 @@ namespace func.brainfuck
 			return Brainfuck.Run(program, input);
 		}
 	}
-}*/
+}

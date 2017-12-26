@@ -7,7 +7,9 @@ namespace func.brainfuck
 {
 	public class BrainfuckBasicCommands
 	{
-		public static void RegisterTo(IVirtualMachine vm, Func<int> read, Action<char> write)
+        static readonly char[] constant = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890".ToCharArray();
+
+        public static void RegisterTo(IVirtualMachine vm, Func<int> read, Action<char> write)
 		{
 			vm.RegisterCommand('.', b => { write((char) (b.Memory[b.MemoryPointer])); });
 			vm.RegisterCommand('+', b => 
@@ -36,14 +38,10 @@ namespace func.brainfuck
                 else b.MemoryPointer--;
             });
 
-            for (char c = 'a'; c <= 'z'; c++)
-                vm.RegisterCommand(c, b => { b.Memory[b.MemoryPointer] = (byte) c; });
-
-            for (char c = 'A'; c <= 'Z'; c++)
-                vm.RegisterCommand(c, b => { b.Memory[b.MemoryPointer] = (byte) c; });
-
-            for (char c = '0'; c <= '9'; c++)
-                vm.RegisterCommand(c, b => { b.Memory[b.MemoryPointer] = (byte) c; });
+            foreach(var ch in constant)
+            {
+                vm.RegisterCommand(ch, b => { b.Memory[b.MemoryPointer] = (byte)ch; });
+            }
         }
 	}
 }

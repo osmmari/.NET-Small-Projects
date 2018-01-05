@@ -1,0 +1,12 @@
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\images\rocket.png
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\images\target.png
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\func-rocket.exe.config
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\func-rocket.exe
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\func-rocket.pdb
+D:\Programs\git\Csharp\func-rocket.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func-rocket.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func_rocket.Properties.Resources.resources
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func-rocket.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func-rocket.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func-rocket.exe
+D:\Programs\git\Csharp\func-rocket.csproj\obj\Debug\func-rocket.pdb

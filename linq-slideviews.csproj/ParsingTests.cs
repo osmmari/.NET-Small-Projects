@@ -28,8 +28,9 @@ namespace linq_slideviews
 		[Test]
 		public void SkipIncorrectSlides()
 		{
-			var dict = ParsingTask.ParseSlideRecords(new[] { slidesHeaderLine, "asd;asd;asd" });
-			Assert.That(dict, Is.Empty);
+            //var dict = ParsingTask.ParseSlideRecords(new[] { slidesHeaderLine, "asd;asd;asd" });
+            var dict = ParsingTask.ParseSlideRecords(new[] { slidesHeaderLine, "113;theory;T2" });
+            Assert.That(dict, Is.Empty);
 		}
 
 		[Test]
@@ -53,7 +54,7 @@ namespace linq_slideviews
 		[Test]
 		public void ParseVisits_Fails_OnIncorrectLine()
 		{
-			var lines = new[] { visitsHeaderLine, "very wrong line!" };
+			var lines = new[] { visitsHeaderLine, "10;1;;" };
 			var exception = Assert.Throws<FormatException>(() =>
 				ParsingTask.ParseVisitRecords(lines, new Dictionary<int, SlideRecord>()).ToList()
 			);

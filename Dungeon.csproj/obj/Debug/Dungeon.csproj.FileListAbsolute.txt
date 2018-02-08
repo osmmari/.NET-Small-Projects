@@ -1,0 +1,14 @@
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeons\Dungeon4.txt
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeons\Dungeon3.txt
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeons\Dungeon2.txt
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeons\Dungeon1.txt
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeon.exe.config
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeon.exe
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\Dungeon.pdb
+D:\Programs\git\Csharp\Dungeon.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.Properties.Resources.resources
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.exe
+D:\Programs\git\Csharp\Dungeon.csproj\obj\Debug\Dungeon.pdb

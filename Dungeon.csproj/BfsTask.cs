@@ -32,7 +32,8 @@ namespace Dungeon
 
                 for (var dx = -1; dx <= 1; dx++)
                     for (var dy = -1; dy <= 1; dy++)
-                        AddToQueue(new Point(point.Value.X + dx, point.Value.Y + dy), point);
+                        if (Math.Abs(dx)!=Math.Abs(dy))
+                            AddToQueue(new Point(point.Value.X + dx, point.Value.Y + dy), point);
             }
 
             yield break;

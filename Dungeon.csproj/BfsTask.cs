@@ -30,13 +30,8 @@ namespace Dungeon
 
                 if (chests.Contains(point.Value)) yield return point;
 
-                /*if (point.Value.X + 1 < width) AddToQueue(new Point(point.Value.X + 1, point.Value.Y), point);
-                if (point.Value.X - 1 > 0) AddToQueue(new Point(point.Value.X - 1, point.Value.Y), point);
-                if (point.Value.Y + 1 < height) AddToQueue(new Point(point.Value.X, point.Value.Y + 1), point);
-                if (point.Value.Y - 1 > 0) AddToQueue(new Point(point.Value.X, point.Value.Y - 1), point);*/
-
-                for (var dx = 0; dx <= 1; dx++)
-                    for (var dy = 0; dy <= 1; dy++)
+                for (var dx = -1; dx <= 1; dx++)
+                    for (var dy = -1; dy <= 1; dy++)
                         AddToQueue(new Point(point.Value.X + dx, point.Value.Y + dy), point);
             }
 

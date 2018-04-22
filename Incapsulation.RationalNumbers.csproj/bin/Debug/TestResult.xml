@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="Incapsulation.RationalNumbers.exe" fullname="D:/Programs/git/Csharp/Incapsulation.RationalNumbers.csproj/bin/Debug/Incapsulation.RationalNumbers.exe" testcasecount="20" result="Failed" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:11Z" duration="8.163546" total="20" passed="17" failed="3" inconclusive="0" skipped="0" asserts="45" random-seed="529856913">
+  <command-line><![CDATA["D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\bin\Debug\Incapsulation.RationalNumbers.exe" ]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1021" name="Incapsulation.RationalNumbers.exe" fullname="D:/Programs/git/Csharp/Incapsulation.RationalNumbers.csproj/bin/Debug/Incapsulation.RationalNumbers.exe" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:11Z" duration="8.163546" total="20" passed="17" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="45">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\bin\Debug" machine-name="AESEE-PC" user="aesee" user-domain="aesee-PC" culture="ru-RU" uiculture="ru-RU" os-architecture="x86" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\bin\Debug" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="3012" />
+      <property name="_APPDOMAIN" value="Incapsulation.RationalNumbers.exe" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1022" name="Incapsulation" fullname="Incapsulation" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:11Z" duration="8.155004" total="20" passed="17" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="45">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1023" name="RationalNumbers" fullname="Incapsulation.RationalNumbers" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:11Z" duration="8.152703" total="20" passed="17" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="45">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1000" name="Rational_should" fullname="Incapsulation.RationalNumbers.Rational_should" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:11Z" duration="8.149831" total="20" passed="17" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="45">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1018" name="ConvertFromInt" fullname="Incapsulation.RationalNumbers.Rational_should.ConvertFromInt" methodname="ConvertFromInt" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="915845819" result="Passed" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:02Z" duration="0.010898" asserts="3" />
+          <test-case id="1017" name="ConvertToDouble" fullname="Incapsulation.RationalNumbers.Rational_should.ConvertToDouble" methodname="ConvertToDouble" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="754954647" result="Passed" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:02Z" duration="0.002253" asserts="1" />
+          <test-case id="1014" name="Divide" fullname="Incapsulation.RationalNumbers.Rational_should.Divide" methodname="Divide" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1311328232" result="Passed" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:02Z" duration="0.000268" asserts="3" />
+          <test-case id="1016" name="DivideToZero" fullname="Incapsulation.RationalNumbers.Rational_should.DivideToZero" methodname="DivideToZero" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1896321096" result="Failed" label="Error" start-time="2018-04-22 09:47:02Z" end-time="2018-04-22 09:47:04Z" duration="1.798726" asserts="0">
+            <failure>
+              <message><![CDATA[System.DivideByZeroException : Попытка деления на нуль.]]></message>
+              <stack-trace><![CDATA[   в Incapsulation.RationalNumbers.Rational..ctor(Int32 m, Int32 n) в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational.cs:строка 25
+   в Incapsulation.RationalNumbers.Rational_should.DivideToZero() в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 124]]></stack-trace>
+            </failure>
+          </test-case>
+          <test-case id="1015" name="DivideWithNan" fullname="Incapsulation.RationalNumbers.Rational_should.DivideWithNan" methodname="DivideWithNan" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="523677494" result="Passed" start-time="2018-04-22 09:47:04Z" end-time="2018-04-22 09:47:04Z" duration="0.001516" asserts="2" />
+          <test-case id="1019" name="ExplicitlyConvertToInt" fullname="Incapsulation.RationalNumbers.Rational_should.ExplicitlyConvertToInt" methodname="ExplicitlyConvertToInt" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="737965996" result="Passed" start-time="2018-04-22 09:47:04Z" end-time="2018-04-22 09:47:04Z" duration="0.000370" asserts="1" />
+          <test-case id="1020" name="ExplicitlyConvertToIntAndFailsIfNonCorvertable" fullname="Incapsulation.RationalNumbers.Rational_should.ExplicitlyConvertToIntAndFailsIfNonCorvertable" methodname="ExplicitlyConvertToIntAndFailsIfNonCorvertable" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="690653489" result="Failed" start-time="2018-04-22 09:47:04Z" end-time="2018-04-22 09:47:06Z" duration="1.518904" asserts="1">
+            <failure>
+              <message><![CDATA[  Expected: <System.ArgumentException>
+  But was:  null
+]]></message>
+              <stack-trace><![CDATA[в Incapsulation.RationalNumbers.Rational_should.ExplicitlyConvertToIntAndFailsIfNonCorvertable() в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 151
+]]></stack-trace>
+            </failure>
+            <assertions>
+              <assertion result="Failed">
+                <message><![CDATA[  Expected: <System.ArgumentException>
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[в Incapsulation.RationalNumbers.Rational_should.ExplicitlyConvertToIntAndFailsIfNonCorvertable() в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 151
+]]></stack-trace>
+              </assertion>
+            </assertions>
+          </test-case>
+          <test-case id="1004" name="InitializeAndReduce1" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeAndReduce1" methodname="InitializeAndReduce1" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="88933152" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000308" asserts="3" />
+          <test-case id="1005" name="InitializeAndReduce2" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeAndReduce2" methodname="InitializeAndReduce2" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1236660972" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000348" asserts="3" />
+          <test-case id="1006" name="InitializeAndReduce3" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeAndReduce3" methodname="InitializeAndReduce3" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1582520058" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000298" asserts="3" />
+          <test-case id="1007" name="InitializeAndReduce4" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeAndReduce4" methodname="InitializeAndReduce4" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="85868665" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000288" asserts="3" />
+          <test-case id="1001" name="InitializeSimpleRatioCorrectly" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeSimpleRatioCorrectly" methodname="InitializeSimpleRatioCorrectly" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="682117772" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000283" asserts="3" />
+          <test-case id="1003" name="InitializeWithZeroDenomerator" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeWithZeroDenomerator" methodname="InitializeWithZeroDenomerator" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1381683168" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000278" asserts="1" />
+          <test-case id="1002" name="InitializeWitoutDenomerator" fullname="Incapsulation.RationalNumbers.Rational_should.InitializeWitoutDenomerator" methodname="InitializeWitoutDenomerator" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1854016032" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000278" asserts="3" />
+          <test-case id="1012" name="Multiply" fullname="Incapsulation.RationalNumbers.Rational_should.Multiply" methodname="Multiply" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1272030793" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000575" asserts="3" />
+          <test-case id="1013" name="MultiplyWithNan" fullname="Incapsulation.RationalNumbers.Rational_should.MultiplyWithNan" methodname="MultiplyWithNan" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="3140714" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000370" asserts="2" />
+          <test-case id="1010" name="Subtract" fullname="Incapsulation.RationalNumbers.Rational_should.Subtract" methodname="Subtract" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1181922848" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.001295" asserts="3" />
+          <test-case id="1011" name="SubtractWithNan" fullname="Incapsulation.RationalNumbers.Rational_should.SubtractWithNan" methodname="SubtractWithNan" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="270797349" result="Passed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:06Z" duration="0.000355" asserts="2" />
+          <test-case id="1008" name="Sum" fullname="Incapsulation.RationalNumbers.Rational_should.Sum" methodname="Sum" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="1411469082" result="Failed" start-time="2018-04-22 09:47:06Z" end-time="2018-04-22 09:47:11Z" duration="4.770808" asserts="3">
+            <failure>
+              <message><![CDATA[  Expected: 2
+  But was:  4
+]]></message>
+              <stack-trace><![CDATA[в Incapsulation.RationalNumbers.Rational_should.Equal(Int32 numerator, Int32 denominator, Rational b) в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 17
+в Incapsulation.RationalNumbers.Rational_should.Sum() в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 70
+]]></stack-trace>
+            </failure>
+            <assertions>
+              <assertion result="Failed">
+                <message><![CDATA[  Expected: 2
+  But was:  4
+]]></message>
+                <stack-trace><![CDATA[в Incapsulation.RationalNumbers.Rational_should.Equal(Int32 numerator, Int32 denominator, Rational b) в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 17
+в Incapsulation.RationalNumbers.Rational_should.Sum() в D:\Programs\git\Csharp\Incapsulation.RationalNumbers.csproj\Rational_should.cs:строка 70
+]]></stack-trace>
+              </assertion>
+            </assertions>
+          </test-case>
+          <test-case id="1009" name="SumWithNan" fullname="Incapsulation.RationalNumbers.Rational_should.SumWithNan" methodname="SumWithNan" classname="Incapsulation.RationalNumbers.Rational_should" runstate="Runnable" seed="15499432" result="Passed" start-time="2018-04-22 09:47:11Z" end-time="2018-04-22 09:47:11Z" duration="0.000321" asserts="2" />
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

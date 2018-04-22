@@ -1,0 +1,14 @@
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Dungeons\Dungeon1.txt
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Dungeons\Dungeon2.txt
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Dungeons\Dungeon3.txt
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Dungeons\Dungeon4.txt
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Rivals.exe.config
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Rivals.exe
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\Rivals.pdb
+D:\Programs\git\Csharp\Rivals.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.Properties.Resources.resources
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.csproj.GenerateResource.Cache
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.exe
+D:\Programs\git\Csharp\Rivals.csproj\obj\Debug\Rivals.pdb

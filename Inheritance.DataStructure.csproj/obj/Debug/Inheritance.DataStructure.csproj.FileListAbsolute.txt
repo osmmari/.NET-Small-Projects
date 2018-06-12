@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\obj\Debug\Inheritance.DataStructure.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\obj\Debug\Inheritance.DataStructure.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\bin\Debug\Inheritance.DataStructure.exe.config
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\bin\Debug\Inheritance.DataStructure.exe
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\bin\Debug\Inheritance.DataStructure.pdb
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\obj\Debug\Inheritance.DataStructure.exe
+D:\Programs\git\Csharp\Inheritance.DataStructure.csproj\obj\Debug\Inheritance.DataStructure.pdb

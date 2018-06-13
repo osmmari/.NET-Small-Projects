@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\bin\Debug\Inheritance.Virtual.exe.config
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\bin\Debug\Inheritance.Virtual.exe
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\bin\Debug\Inheritance.Virtual.pdb
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Virtual.exe
+D:\Programs\git\Csharp\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Virtual.pdb

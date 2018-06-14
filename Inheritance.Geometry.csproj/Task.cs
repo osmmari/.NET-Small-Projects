@@ -6,14 +6,27 @@ using System.Threading.Tasks;
 
 namespace Inheritance.Geometry
 {
-	public abstract class Body
+    public interface IVisitor
+    {
+        void Visit(Ball body);
+        void Visit(Cube body);
+        void Visit(Cyllinder body);
+    }
+
+    public abstract class Body
 	{
         public abstract double GetVolume();
+        public abstract void Accept(IVisitor visitor);
 	}
 
 	public class Ball : Body
 	{
-		public double Radius { get; set; }
+        public double Radius { get; set; }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
         public override double GetVolume()
         {
@@ -23,7 +36,12 @@ namespace Inheritance.Geometry
 
 	public class Cube : Body
 	{
-		public double Size { get; set; }
+        public double Size { get; set; }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
         public override double GetVolume()
         {
@@ -33,8 +51,13 @@ namespace Inheritance.Geometry
 
 	public class Cyllinder : Body
 	{
-		public double Height { get; set; }
-		public double Radius { get; set; }
+        public double Radius { get; set; }
+        public double Height { get; set; }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
         public override double GetVolume()
         {
@@ -43,12 +66,43 @@ namespace Inheritance.Geometry
     }
 
 	// Заготовка класса для задачи на Visitor
-	public class SurfaceAreaVisitor
+	public class SurfaceAreaVisitor : IVisitor
 	{
 		public double SurfaceArea { get; private set; }
-	}
-	public class DimensionsVisitor
+
+        public void Visit(Ball body)
+        {
+            SurfaceArea = 4 * Math.PI * body.Radius * body.Radius;
+        }
+
+        public void Visit(Cube body)
+        {
+            SurfaceArea = 6 * body.Size * body.Size;
+        }
+
+        public void Visit(Cyllinder body)
+        {
+            SurfaceArea = 2 * Math.PI * body.Radius * (body.Height + body.Radius);
+        }
+    }
+
+	public class DimensionsVisitor : IVisitor
 	{
 		public Dimensions Dimensions { get; private set; }
-	}
+
+        public void Visit(Ball body)
+        {
+            Dimensions = new Dimensions(body.Radius * 2, body.Radius * 2);
+        }
+
+        public void Visit(Cube body)
+        {
+            Dimensions = new Dimensions(body.Size, body.Size);
+        }
+
+        public void Visit(Cyllinder body)
+        {
+            Dimensions = new Dimensions(body.Radius * 2, body.Height);
+        }
+    }
 }

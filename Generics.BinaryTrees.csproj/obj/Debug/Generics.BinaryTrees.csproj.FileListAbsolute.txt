@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\obj\Debug\Generics.BinaryTrees.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\obj\Debug\Generics.BinaryTrees.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\bin\Debug\Generics.BinaryTree.exe.config
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\bin\Debug\Generics.BinaryTree.exe
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\bin\Debug\Generics.BinaryTree.pdb
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\obj\Debug\Generics.BinaryTree.exe
+D:\Programs\git\Csharp\Generics.BinaryTrees.csproj\obj\Debug\Generics.BinaryTree.pdb

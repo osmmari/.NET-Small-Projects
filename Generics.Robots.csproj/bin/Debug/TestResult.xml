@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="Generics.Robots.exe" fullname="D:/Programs/git/Csharp/Generics.Robots.csproj/bin/Debug/Generics.Robots.exe" testcasecount="2" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.035903" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="2" random-seed="39354713">
+  <command-line><![CDATA["D:\Programs\git\Csharp\Generics.Robots.csproj\bin\Debug\Generics.Robots.exe" ]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1003" name="Generics.Robots.exe" fullname="D:/Programs/git/Csharp/Generics.Robots.csproj/bin/Debug/Generics.Robots.exe" runstate="Runnable" testcasecount="2" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.035903" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Programs\git\Csharp\Generics.Robots.csproj\bin\Debug" machine-name="AESEE-PC" user="aesee" user-domain="aesee-PC" culture="ru-RU" uiculture="ru-RU" os-architecture="x86" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Programs\git\Csharp\Generics.Robots.csproj\bin\Debug" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="5140" />
+      <property name="_APPDOMAIN" value="Generics.Robots.exe" />
+    </properties>
+    <test-suite type="TestSuite" id="1004" name="Generics" fullname="Generics" runstate="Runnable" testcasecount="2" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.028021" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+      <test-suite type="TestSuite" id="1005" name="Robots" fullname="Generics.Robots" runstate="Runnable" testcasecount="2" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.026603" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+        <test-suite type="TestFixture" id="1000" name="Architecture_Should" fullname="Generics.Robots.Architecture_Should" classname="Generics.Robots.Architecture_Should" runstate="Runnable" testcasecount="2" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.024648" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+          <test-case id="1002" name="BeCorrectForBuilder" fullname="Generics.Robots.Architecture_Should.BeCorrectForBuilder" methodname="BeCorrectForBuilder" classname="Generics.Robots.Architecture_Should" runstate="Runnable" seed="335696180" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.015708" asserts="1" />
+          <test-case id="1001" name="BeCorrectForShooter" fullname="Generics.Robots.Architecture_Should.BeCorrectForShooter" methodname="BeCorrectForShooter" classname="Generics.Robots.Architecture_Should" runstate="Runnable" seed="2087277038" result="Passed" start-time="2018-06-26 15:17:40Z" end-time="2018-06-26 15:17:40Z" duration="0.000835" asserts="1" />
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

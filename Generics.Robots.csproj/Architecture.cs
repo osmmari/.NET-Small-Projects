@@ -7,54 +7,61 @@ using System.Threading.Tasks;
 
 namespace Generics.Robots
 {
-    public abstract class RobotAI
+    public interface IRobotAI<out AI> //where AI : IMoveCommand
     {
-        public abstract object GetCommand();
+        AI GetCommand();
     }
 
-    public class ShooterAI : RobotAI
+    public abstract class RobotAI<AI> : IRobotAI<AI> //where AI : IMoveCommand
     {
-        int counter = 1;
+        protected int counter = 1;
 
-        public override object GetCommand()
+        public abstract AI GetCommand();
+    }
+
+    public class ShooterAI : RobotAI<ShooterCommand>
+    {
+        public override ShooterCommand GetCommand()
         {
             return ShooterCommand.ForCounter(counter++);
         }
     }
 
-    public class BuilderAI : RobotAI
+    public class BuilderAI : RobotAI<BuilderCommand>
     {
-        int counter = 1;
-        public override object GetCommand()
+        public override BuilderCommand GetCommand()
         {
             return BuilderCommand.ForCounter(counter++);
         }
     }
 
-    public abstract class Device
+    public interface IDevice<Command>
     {
-        public abstract string ExecuteCommand(object command);
+        string ExecuteCommand(Command command);
     }
 
-    public class Mover : Device
+    public abstract class Device<Command> : IDevice<Command> //where Command : IMoveCommand
     {
-        public override string ExecuteCommand(object _command)
+        public abstract string ExecuteCommand(Command command);
+    }
+
+    public class Mover : Device<IMoveCommand>
+    {
+        public override string ExecuteCommand(IMoveCommand command)
         {
-            var command = _command as IMoveCommand;
             if (command == null)
                 throw new ArgumentException();
             return $"MOV {command.Destination.X}, {command.Destination.Y}";
+            //return String.Format("MOV {0}, {1}", command.Destination.X, command.Destination.Y);
         }
     }
 
-
-
     public class Robot
     {
-        RobotAI ai;
-        Device device;
+        IRobotAI<IMoveCommand> ai;
+        IDevice<IMoveCommand> device;
 
-        public Robot(RobotAI ai, Device executor)
+        public Robot(IRobotAI<IMoveCommand> ai, IDevice<IMoveCommand> executor)
         {
             this.ai = ai;
             this.device = executor;
@@ -62,21 +69,18 @@ namespace Generics.Robots
 
         public IEnumerable<string> Start(int steps)
         {
-             for (int i=0;i<steps;i++)
-             {
-                 var command = ai.GetCommand();
-                 if (command == null)
-                     break;
-                 yield return device.ExecuteCommand(command);
-             }
-
+            for (int i = 0; i < steps; i++)
+            {
+                var command = ai.GetCommand();
+                if (command == null)
+                    break;
+                yield return device.ExecuteCommand(command);
+            }
         }
 
-        public static Robot Create(RobotAI ai, Device executor)
+        public static Robot Create(IRobotAI<IMoveCommand> ai, IDevice<IMoveCommand> executor)
         {
             return new Robot(ai, executor);
         }
     }
-    
-
 }

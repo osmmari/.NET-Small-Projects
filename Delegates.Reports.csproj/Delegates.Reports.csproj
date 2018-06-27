@@ -4,16 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4DABFC2F-503E-4338-820B-40F67467B7E6}</ProjectGuid>
+    <ProjectGuid>{EFC39780-2E5B-4C21-8605-8C21B4DFA19F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Generics.Robots</RootNamespace>
-    <AssemblyName>Generics.Robots</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Delegates.Reports</RootNamespace>
+    <AssemblyName>Delegates.Reports</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,15 +52,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Architecture.cs" />
-    <Compile Include="Architecture_Should.cs" />
-    <Compile Include="Commands.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportMaker.cs" />
+    <Compile Include="Measurement.cs" />
+    <Compile Include="MeanAndStd.cs" />
+    <Compile Include="ReportMaker_should.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

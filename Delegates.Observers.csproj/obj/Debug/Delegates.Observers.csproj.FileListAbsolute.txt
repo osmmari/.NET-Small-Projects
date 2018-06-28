@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Delegates.Observers.csproj\bin\Debug\Delegates.Observers.exe.config
+D:\Programs\git\Csharp\Delegates.Observers.csproj\bin\Debug\Delegates.Observers.exe
+D:\Programs\git\Csharp\Delegates.Observers.csproj\bin\Debug\Delegates.Observers.pdb
+D:\Programs\git\Csharp\Delegates.Observers.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Delegates.Observers.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Delegates.Observers.csproj\obj\Debug\Delegates.Observers.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Delegates.Observers.csproj\obj\Debug\Delegates.Observers.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Delegates.Observers.csproj\obj\Debug\Delegates.Observers.exe
+D:\Programs\git\Csharp\Delegates.Observers.csproj\obj\Debug\Delegates.Observers.pdb

@@ -34,8 +34,10 @@ namespace Recognizer
                 {
                     var indexX = pixelX + x;
                     var indexY = pixelY + y;
+
                     if (indexX >= 0 && indexX < width && indexY >= 0 && indexY < height)
-                        result += image[pixelX + x, pixelY + y] * filter[bias + x, bias + y];
+                        result += image[indexX, indexY] * filter[bias + x, bias + y];
+
                     else return 0;
                 }
             return result;

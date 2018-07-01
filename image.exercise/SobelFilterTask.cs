@@ -7,30 +7,36 @@ namespace Recognizer
         public static double[,] SobelFilter(double[,] g, double[,] sx)
         {
             var width = g.GetLength(0);
-            var height = g.GetLength(1);
+            var height = g.GetLength(1);            
             var result = new double[width, height];
-            
-			var sy = Transpose (sx);
 
-			for (int x = 1; x < width - 1; x++)
-                for (int y = 1; y < height - 1; y++)
+            int bias = sx.GetLength(0) / 2;
+            var sy = Transpose (sx);
+
+            for (int x = 0; x < width; x++)
+                for (int y = 0; y < height; y++)
                 {                    
-					var gx = MultiplyMatrixes (g, sx, x, y);
-					var gy = MultiplyMatrixes (g, sy, x, y);
+					var gx = MultiplyMatrixes (g, sx, x, y, bias);
+					var gy = MultiplyMatrixes (g, sy, x, y, bias);
                     
 					result[x, y] = Math.Sqrt(gx * gx + gy * gy);
                 }
             return result;
         }
 
-        private static double MultiplyMatrixes(double[,] image, double[,] filter, int pixelX, int pixelY)
+        private static double MultiplyMatrixes(double[,] image, double[,] filter, int pixelX, int pixelY, int bias)
         {
             double result = 0;
-            var length = filter.GetLength(0);
-            for (var x = 0; x < length; x++)
-                for (var y = 0; y < length; y++)
+            var width = image.GetLength(0);
+            var height = image.GetLength(1);
+            for (var x = -bias; x <= bias; x++)
+                for (var y = -bias; y <= bias; y++)
                 {
-                    result += image[pixelX - 1 + x, pixelY - 1 + y] * filter[x, y];
+                    var indexX = pixelX + x;
+                    var indexY = pixelY + y;
+                    if (indexX >= 0 && indexX < width && indexY >= 0 && indexY < height)
+                        result += image[pixelX + x, pixelY + y] * filter[bias + x, bias + y];
+                    else return 0;
                 }
             return result;
         }

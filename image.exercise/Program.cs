@@ -66,7 +66,7 @@ namespace Recognizer
 		[STAThread]
 		private static void Main()
 		{
-			var bmp = (Bitmap) Image.FromFile("eurobot.bmp");
+            var bmp = (Bitmap) Image.FromFile("eurobot.bmp");
 			var pixels = LoadPixels(bmp);
 
 			var form = new Form
@@ -102,6 +102,17 @@ namespace Recognizer
 			}
 			panel.Controls.Add(CreateBox(bitmap), 2, 1);
 			Application.Run(form);
+
+            /*var image = new double[1, 1];
+            image[0, 0] = 1;
+
+            var filter = new double[1, 1];
+            filter[0, 0] = 2;
+
+            var result = SobelFilterTask.SobelFilter(image, filter);
+
+            Console.WriteLine(result[0,0]);
+            Console.ReadKey(true);*/
 		}
 	}
 }

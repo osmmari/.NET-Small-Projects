@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Memory.API.csproj\bin\Debug\Memory.API.exe.config
+D:\Programs\git\Csharp\Memory.API.csproj\bin\Debug\Memory.API.exe
+D:\Programs\git\Csharp\Memory.API.csproj\bin\Debug\Memory.API.pdb
+D:\Programs\git\Csharp\Memory.API.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Memory.API.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Memory.API.csproj\obj\Debug\Memory.API.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Memory.API.csproj\obj\Debug\Memory.API.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Memory.API.csproj\obj\Debug\Memory.API.exe
+D:\Programs\git\Csharp\Memory.API.csproj\obj\Debug\Memory.API.pdb

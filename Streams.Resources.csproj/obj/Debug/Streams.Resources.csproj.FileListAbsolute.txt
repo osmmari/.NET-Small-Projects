@@ -1,0 +1,9 @@
+D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\Streams.Resources.exe.config
+D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\Streams.Resources.exe
+D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\Streams.Resources.pdb
+D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Streams.Resources.csproj\obj\Debug\Streams.Resources.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Streams.Resources.csproj\obj\Debug\Streams.Resources.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Streams.Resources.csproj\obj\Debug\Streams.Resources.exe
+D:\Programs\git\Csharp\Streams.Resources.csproj\obj\Debug\Streams.Resources.pdb

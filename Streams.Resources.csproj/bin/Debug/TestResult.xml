@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="Streams.Resources.exe" fullname="D:/Programs/git/Csharp/Streams.Resources.csproj/bin/Debug/Streams.Resources.exe" testcasecount="4" result="Failed" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.048002" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="1" random-seed="675063502">
+  <command-line><![CDATA["D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug\Streams.Resources.exe"   ]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1005" name="Streams.Resources.exe" fullname="D:/Programs/git/Csharp/Streams.Resources.csproj/bin/Debug/Streams.Resources.exe" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.048002" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="1">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug" machine-name="AESEE-PC" user="aesee" user-domain="aesee-PC" culture="ru-RU" uiculture="ru-RU" os-architecture="x86" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Programs\git\Csharp\Streams.Resources.csproj\bin\Debug" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="7252" />
+      <property name="_APPDOMAIN" value="Streams.Resources.exe" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1006" name="Streams" fullname="Streams" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.041046" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="1">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1007" name="Resources" fullname="Streams.Resources" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.039558" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1000" name="ResourceStream_should" fullname="Streams.Resources.ResourceStream_should" classname="Streams.Resources.ResourceStream_should" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.037625" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="1">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1001" name="ReadKey1" fullname="Streams.Resources.ResourceStream_should.ReadKey1" methodname="ReadKey1" classname="Streams.Resources.ResourceStream_should" runstate="Runnable" seed="1044761842" result="Failed" label="Error" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:15Z" duration="0.014595" asserts="0">
+            <failure>
+              <message><![CDATA[System.ArgumentException : Смещение и длина вышли за границы массива или значение счетчика превышает количество элементов от указателя до конца исходной коллекции.]]></message>
+              <stack-trace><![CDATA[   в System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   в Streams.Resources.ResourceReaderStream.Read(Byte[] buffer, Int32 offset, Int32 count) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream.cs:строка 26
+   в Streams.Resources.ResourceStream_should.Read(String key, TestStream stream) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 31
+   в Streams.Resources.ResourceStream_should.ReadKey1() в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 44]]></stack-trace>
+            </failure>
+          </test-case>
+          <test-case id="1002" name="ReadKey2" fullname="Streams.Resources.ResourceStream_should.ReadKey2" methodname="ReadKey2" classname="Streams.Resources.ResourceStream_should" runstate="Runnable" seed="1365910476" result="Failed" label="Error" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:15Z" duration="0.000728" asserts="0">
+            <failure>
+              <message><![CDATA[System.ArgumentException : Смещение и длина вышли за границы массива или значение счетчика превышает количество элементов от указателя до конца исходной коллекции.]]></message>
+              <stack-trace><![CDATA[   в System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   в Streams.Resources.ResourceReaderStream.Read(Byte[] buffer, Int32 offset, Int32 count) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream.cs:строка 26
+   в Streams.Resources.ResourceStream_should.Read(String key, TestStream stream) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 31
+   в Streams.Resources.ResourceStream_should.ReadKey2() в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 54]]></stack-trace>
+            </failure>
+          </test-case>
+          <test-case id="1003" name="ReadKey3" fullname="Streams.Resources.ResourceStream_should.ReadKey3" methodname="ReadKey3" classname="Streams.Resources.ResourceStream_should" runstate="Runnable" seed="597306456" result="Failed" label="Error" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:15Z" duration="0.000639" asserts="0">
+            <failure>
+              <message><![CDATA[System.ArgumentException : Смещение и длина вышли за границы массива или значение счетчика превышает количество элементов от указателя до конца исходной коллекции.]]></message>
+              <stack-trace><![CDATA[   в System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   в Streams.Resources.ResourceReaderStream.Read(Byte[] buffer, Int32 offset, Int32 count) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream.cs:строка 26
+   в Streams.Resources.ResourceStream_should.Read(String key, TestStream stream) в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 31
+   в Streams.Resources.ResourceStream_should.ReadKey3() в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 64]]></stack-trace>
+            </failure>
+          </test-case>
+          <test-case id="1004" name="ReadUnknownKey" fullname="Streams.Resources.ResourceStream_should.ReadUnknownKey" methodname="ReadUnknownKey" classname="Streams.Resources.ResourceStream_should" runstate="Runnable" seed="2116740367" result="Failed" start-time="2018-07-17 21:00:15Z" end-time="2018-07-17 21:00:16Z" duration="0.012316" asserts="1">
+            <failure>
+              <message><![CDATA[  Expected: 0
+  But was:  10
+]]></message>
+              <stack-trace><![CDATA[в Streams.Resources.ResourceStream_should.ReadUnknownKey() в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 77
+]]></stack-trace>
+            </failure>
+            <assertions>
+              <assertion result="Failed">
+                <message><![CDATA[  Expected: 0
+  But was:  10
+]]></message>
+                <stack-trace><![CDATA[в Streams.Resources.ResourceStream_should.ReadUnknownKey() в D:\Programs\git\Csharp\Streams.Resources.csproj\ResourceStream_should.cs:строка 77
+]]></stack-trace>
+              </assertion>
+            </assertions>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,8 @@
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\bin\Debug\Ddd.Infrastructure.dll
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\bin\Debug\Ddd.Infrastructure.pdb
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\bin\Debug\nunit.framework.dll
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\bin\Debug\nunitlite.dll
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\obj\Debug\Ddd.Taxi.csprojResolveAssemblyReference.cache
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\obj\Debug\Ddd.Taxi.csproj.CoreCompileInputs.cache
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\obj\Debug\Ddd.Infrastructure.dll
+D:\Programs\git\Csharp\Ddd.Taxi.csproj\obj\Debug\Ddd.Infrastructure.pdb
